@@ -20,11 +20,11 @@
             </div>
             <div class="container-menu" id="menu">
                 <nav class="menu">
-                    <a href="index.html">Inicio</a>
-                    <a href="nosotros.html">Nosotros</a>
-                    <a href="">Servicios</a>
-                    <a href="">Proyectos</a>
-                    <a href="">Contacto</a>
+                    <a href="index.php">Inicio</a>
+                    <a href="nosotros.php">Nosotros</a>
+                     <a href="#testimonios">Testimonios</a>
+                    <a href="#servicios">Servicios</a>
+                    <a href="">Academy</a>
                     <button id="modo">
                         <img src="images/luna.png" alt="" id="moon" />
                         <img src="images/sun.png" alt="" id="sun" />
@@ -50,7 +50,7 @@
                 <div class="item-know-us" data-aos="fade-down" data-aos-duration="1000" id="know-us">
                     <img src="images/somos.png" alt="" />
                 </div>
-                <div class="item-know-us">
+                <div class="item-know-us" >
                     <h6 data-aos="fade-down" data-aos-duration="1000">
                         la agencia de marketing digital dental de méxico
                     </h6>
@@ -90,7 +90,7 @@
                 </div>
             </div>
         </section>
-        <section class="services">
+        <section class="services" id="servicios">
             <h2 class="services-title" data-aos="zoom-in" data-aos-duration="1000">
                 <span>Servicios</span> <span>Disponibles</span>
             </h2>
@@ -320,7 +320,7 @@
                 <img src="images/ivoclar.png" alt="" />
             </button>
         </div>
-        <div class="opinions">
+        <div class="opinions" id="testimonios">
             <div class="title-opinions">
                 <h2><span>Comen</span><span>tarios</span></h2>
                 <div class="blue-line" data-aos="fade-left" data-aos-duration="1000"></div>

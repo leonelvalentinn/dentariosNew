@@ -22,11 +22,11 @@
         </div>
         <div class="container-menu" id="menu">
           <nav class="menu">
-            <a href="index.html">Inicio</a>
-            <a href="nosotros.html">Nosotros</a>
-            <a href="">Servicios</a>
-            <a href="">Proyectos</a>
-            <a href="">Contacto</a>
+            <a href="index.php">Inicio</a>
+            <a href="nosotros.php">Nosotros</a>
+            <a href="#testimonios">Testimonios</a>
+            <a href="index.php#servicios">Servicios</a>
+            <a href="">Academy</a>
             <button id="modo">
               <img src="images/luna.png" alt="" id="moon" />
               <img src="images/sun.png" alt="" id="sun" />
@@ -217,6 +217,123 @@
       data-aos-duration="1000"
     ></div>
   </div>
+  <div class="opinions" id="testimonios">
+            <div class="title-opinions">
+                <h2><span>Comen</span><span>tarios</span></h2>
+                <div class="blue-line" data-aos="fade-left" data-aos-duration="1000"></div>
+            </div>
+            <div class="container-opinions">
+                <div class="item-opinions">
+                    <p>
+                        Nosotros creamos vinculos fuertes con nuestros clientes que se
+                        transforma en una forma efectiva de trabajo, que a su vez se
+                        traduce en excelentes resultados a corto , mediano y largo plazo.
+                        Conoce lo que los doctores opinan de nosotros.
+                    </p>
+                </div>
+                <div class="item-opinions">
+                    <div class="title-photo">
+                        <h6>Dra. Ivonne Torres</h6>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="title-body-text">
+                        <div class="vidio">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/FqF_Hnvz9rA"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-opinions">
+                    <div class="title-photo">
+                        <h6>Dra. Erika Villar</h6>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="title-body-text">
+                        <div class="vidio">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/A62rQJ461wg"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-opinions">
+                    <div class="title-photo">
+                        <h6>Dra. Mariana Barrios</h6>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="title-body-text">
+                        <div class="vidio">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/Fgig-ng4ZKs"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-opinions">
+                    <div class="title-photo">
+                        <h6>Dr. Guillermo Urban</h6>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="title-body-text">
+                        <div class="vidio">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/1RvOZPN_rG0"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-opinions">
+                    <div class="title-photo">
+                        <h6>Kenedy Mayo Mayo</h6>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="title-body-text">
+                        <div class="vidio">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/K4id0O9JJho"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     <div class="opinions">
         <div class="title-opinions">
           <h2><span>Con</span><span>tacto</span></h2>
