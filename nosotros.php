@@ -70,11 +70,11 @@
           <span class="blue-letter">Experiencia</span>
         </h2>
         <p data-aos="zoom-in" data-aos-duration="1000">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi
-          reiciendis explicabo quos libero natus maxime, minima atque,
-          voluptatibus, ipsa necessitatibus incidunt possimus numquam rerum
-          quas voluptate nostrum vitae. Porro odit quam, ducimus iure
-          dolorem incidunt voluptatem ratione assumenda expedita inventore.
+           Somos una agencia de publicidad con mas de 10 años de experiencia
+              en el sector odontológico, compuesta por profesionales expertos en
+              canales digitales y en constante actualización.
+              Por esa razon tenemos la certeza de los resultados que podemos dar.
+              Muchas clínicas y consultorios han confiado en nosotros.
         </p>
       </div>
     </div>
@@ -91,11 +91,15 @@
         <span class="blue-letter">para cada Caso</span>
       </h2>
       <p data-aos="zoom-in" data-aos-duration="1000">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi
-        reiciendis explicabo quos libero natus maxime, minima atque,
-        voluptatibus, ipsa necessitatibus incidunt possimus numquam rerum
-        quas voluptate nostrum vitae. Porro odit quam, ducimus iure
-        dolorem incidunt voluptatem ratione assumenda expedita inventore.
+       Dentarios maneja
+              actualmente las siguientes áreas: Diseño, Programación, Branding,
+              SEO, SEM, Marketing digital, marketing de contenidos.Hace 2 años
+              la agencia inicio una nueva aventura: Dentarios Academy que es la
+              área académica, la cual nos ha brindado la oportunidad de ayudar a
+              dirigir proyectos por medio de capacitaciones, cursos y diplomados
+              en México, Colombia y Panamá.Nuestra experiencia y capacitación
+              continua nos coloca como la agencia número 1 especializada en el
+              sector Odontológico.
       </p>
        
       </div>
@@ -121,7 +125,9 @@
           <h2>Misión</h2>
         </div>
         <div class="sub-item-value">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In at impedit aperiam omnis explicabo earum iure harum dolore, debitis aliquid deserunt repellendus. Iure reiciendis illo iste in dolore deserunt tenetur nemo unde, incidunt est magni necessitatibus iusto eaque voluptate doloribus ipsam saepe! Eius amet omnis, aut quia eum impedit voluptatem.</p>
+          <p>Lorem ipsum dolor sit amet, consectetu adipisicing elit.In at impedit aperiam omnis explicabo 
+            earum iure harum dolore, debitis aliquid deserunt repellendus. Iure reiciendis illo iste in 
+            dolore deserunt tenetur nemo unde, incidunt est magni necessitatibus iusto eaque voluptate doloribus ipsam saepe! Eius amet omnis, aut quia eum impedit voluptatem.</p>
         </div>
       </div>
       <div class="item-values">
@@ -154,7 +160,7 @@
       <span class="blue-letter">Equipo</span>
     </h2>
     <p>Conocé a todos los integrantes de este equipo</p>
-      <div class="container-team">
+          <div class="container-team">
         <div class="item-team">
           <img src="images/team-1.jpg" alt="">
         </div>

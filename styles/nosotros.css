@@ -274,7 +274,10 @@
 
   .sub-item-value {
     border-radius: 20px;
-    height: 250px;
+    height: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .sub-item-value h2 {
     font-size: 2.5em;
@@ -288,7 +291,9 @@
   }
 
   .sub-item-value img {
-    max-width: 65%;
+    max-width: 100%;
+    height: inherit;
+    object-fit: cover;
     text-align: center;
     padding: 20px;
   }

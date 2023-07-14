@@ -739,27 +739,14 @@ header .logo-header img {
   position: relative;
   border: none;
 }
-.item-opinions:nth-child(4) {
-  border: 2px solid var(--color-title-secundary);
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.item-opinions:nth-child(4) a {
-  text-align: center;
-  font-size: 1em;
-  text-decoration: none;
-  color: var(--color-title-secundary);
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-}
+
 .item-opinions:nth-child(1) {
   padding: 10px;
 }
 
 .item-opinions:nth-child(2),
 .item-opinions:nth-child(3),
+.item-opinions:nth-child(4),
 .item-opinions:nth-child(5),
 .item-opinions:nth-child(6) {
   display: grid;
@@ -771,15 +758,12 @@ header .logo-header img {
 .item-opinions:nth-child(7) {
   display: none;
 }
-.photo {
-  grid-column: 1/2;
-  grid-row: 1/2;
-}
+
 .photo img {
   max-width: 100%;
 }
 .title-photo {
-  grid-column: 2/4;
+  grid-column: 1/4;
   grid-row: 1/2;
   display: flex;
   justify-content: center;
@@ -806,6 +790,23 @@ header .logo-header img {
 .title-body-text {
   grid-column: 1/4;
   grid-row: 2/4;
+}
+.vidio {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+/* Then style the iframe to fit in the container div with full height and width */
+.vidio iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /*Opinions*/
@@ -1163,8 +1164,8 @@ footer {
     top: auto;
   }
   .mySlider .slider-descktop {
-    width: 100%;
-    height: 700px !important;
+    max-width: 100%;
+
     height: inherit;
     -o-object-fit: cover;
     object-fit: cover;
@@ -1275,11 +1276,14 @@ footer {
     grid-template-columns: repeat(3, 1fr);
   }
   .item-services .item-services-header {
-    padding: 40px 20px;
+    padding: 20px 15px;
   }
   .item-services-header h2 {
     font-size: 2.1em;
     text-transform: uppercase;
+  }
+  .item-services-header p {
+    font-size: 0.9em;
   }
 
   .item-services-header {
@@ -1360,8 +1364,9 @@ footer {
   }
   .item-2 img,
   .item-3 img {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: inherit;
+    object-fit: cover;
     border-radius: 20px;
   }
   .item-1 img,
@@ -1423,6 +1428,8 @@ footer {
   /*Opinions*/
   .opinions {
     width: 100%;
+    margin: auto;
+    text-align: center;
   }
   .title-opinions {
     width: 100%;
@@ -1451,38 +1458,23 @@ footer {
   }
   .container-opinions {
     width: 90%;
+    margin: auto;
+    text-align: center;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 250px);
+    grid-template-rows: auto;
     margin: 0px auto 20px auto;
     gap: 1em;
   }
   .item-opinions:nth-child(1) {
-    grid-column: 1/2;
-    grid-row: 1/2;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1.2em;
   }
-  .item-opinions:nth-child(2) {
-    grid-column: 1/2;
-    grid-row: 2/4;
-  }
-  .item-opinions:nth-child(3) {
-    grid-column: 2/3;
-    grid-row: 1/3;
-  }
-  .item-opinions:nth-child(4) {
-    grid-column: 2/3;
-    grid-row: 3/4;
-  }
-  .item-opinions:nth-child(5) {
-    grid-column: 3/4;
-    grid-row: 1/2;
-  }
-  .item-opinions:nth-child(6) {
-    grid-column: 3/4;
-    grid-row: 2/3;
+  .item-opinions {
+    grid-column: auto;
+    grid-row: auto;
   }
 
   .item-opinions:nth-child(7) {
@@ -1501,19 +1493,6 @@ footer {
     border: none;
   }
 
-  .item-opinions:nth-child(4) {
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .item-opinions:nth-child(4) a {
-    text-align: center;
-    font-size: 1.5em;
-    text-decoration: none;
-    font-family: "Montserrat", sans-serif;
-  }
-
   .item-opinions:nth-child(2),
   .item-opinions:nth-child(3),
   .item-opinions:nth-child(5),
@@ -1523,10 +1502,7 @@ footer {
     grid-row: repeat(3, 100px);
     gap: 1em;
   }
-  .photo {
-    grid-column: 1/2;
-    grid-row: 1/2;
-  }
+
   .photo img {
     max-width: 100%;
   }
@@ -1562,7 +1538,23 @@ footer {
   .title-body-text p {
     font-size: 0.9em;
   }
+  .vidio {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  }
 
+  /* Then style the iframe to fit in the container div with full height and width */
+  .vidio iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
   /*Opinions*/
   /*Contacto*/
   .container-contact {
