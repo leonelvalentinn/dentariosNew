@@ -1,8 +1,7 @@
-import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subscription, Observable } from 'rxjs';
-import { first } from 'rxjs/operators';
-import { UserModel } from '../../models/user.model';
+
 import { AuthService } from '../../services/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -14,8 +13,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class LoginComponent implements OnInit, OnDestroy {
   // KeenThemes mock, change it to:
   defaultAuth: any = {
-    email: 'admin@demo.com',
-    password: 'demo',
+    email: 'joan9311@gmail.com',
+    password: '12345678',
   };
   loginForm: FormGroup;
   hasError: boolean;
@@ -76,13 +75,16 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.hasError = false;
     const loginSubscr = this.authService
       .login(this.f.email.value, this.f.password.value)
-      .pipe(first())
-      .subscribe((user: UserModel | undefined) => {
+      /* .pipe(first())*/
+      .subscribe((user: any) => {
         if (user) {
-          this.router.navigate([this.returnUrl]);
+          /*this.router.navigate([this.returnUrl]);*/
+          document.location.reload();
         } else {
           this.hasError = true;
         }
+
+        console.log(user);
       });
     this.unsubscribe.push(loginSubscr);
   }

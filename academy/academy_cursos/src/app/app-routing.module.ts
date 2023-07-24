@@ -8,7 +8,7 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./modules/home/home.module').then((m) => m.HomeModule),
   },
-  {},
+
   {
     path: '',
     redirectTo: '/',
@@ -23,5 +23,6 @@ export const routes: Routes = [
 @NgModule({
   declarations: [],
   imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}
