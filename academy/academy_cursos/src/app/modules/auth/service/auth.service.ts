@@ -32,7 +32,7 @@ export class AuthService {
         return result;
       }),
 
-      catchError((err: any) => {
+      catchError((err) => {
         console.error('err', err);
         return of(undefined);
       })

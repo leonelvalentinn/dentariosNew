@@ -105,8 +105,7 @@ export class AuthService implements OnDestroy {
       catchError((err) => {
         console.error('err', err);
         return of(undefined);
-      }),
-      finalize(() => this.isLoadingSubject.next(false))
+      })
     );
   }
 

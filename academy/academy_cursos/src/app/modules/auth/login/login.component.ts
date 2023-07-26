@@ -76,7 +76,7 @@ export class LoginComponent implements OnInit {
         alert('El usuario se ha registrado correctamente');
       },
       (error) => {
-        alert('Las credenciales ingresadas no son correctas o ya existen ');
+        alert('Las credeenciales ingresadas no son correctas o ya existen');
         console.log(error);
       }
     );
