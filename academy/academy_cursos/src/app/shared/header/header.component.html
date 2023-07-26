@@ -161,7 +161,7 @@
         <div class="header-left rbt-header-content">
           <div class="header-info">
             <div class="logo">
-              <a href="index.html">
+              <a routerLink="/">
                 <img
                   src="assets/images/logo/logo.png"
                   alt="Education Logo Images"
@@ -1410,7 +1410,7 @@
                       >
                     </div>
                   </div>
-                  <ul class="user-list-wrapper">
+                  <ul class="user-list-wrapper" *ngIf="user">
                     <li>
                       <a href="instructor-dashboard.html">
                         <i class="feather-home"></i>
@@ -1484,7 +1484,7 @@
                       </a>
                     </li>
                     <li *ngIf="!user">
-                      <a href="#" onclick="return false;" (click)="logout()">
+                      <a [routerLink]="['/auth/login']">
                         <i class="feather-log-out"></i>
                         <span>Login</span>
                       </a>
@@ -1514,7 +1514,7 @@
                       >
                     </div>
                   </div>
-                  <ul class="user-list-wrapper">
+                  <ul class="user-list-wrapper" *ngIf="user">
                     <li>
                       <a href="instructor-dashboard.html">
                         <i class="feather-home"></i>
@@ -1588,7 +1588,7 @@
                       </a>
                     </li>
                     <li *ngIf="!user">
-                      <a href="#" onclick="return false;" (click)="logout()">
+                      <a routerLink="auth/login">
                         <i class="feather-log-out"></i>
                         <span>Login</span>
                       </a>

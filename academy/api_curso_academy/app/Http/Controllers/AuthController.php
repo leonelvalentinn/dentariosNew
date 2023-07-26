@@ -17,7 +17,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login', 'register']]);
+        $this->middleware('auth:api', ['except' => ['login', 'register', 'login_tienda']]);
     }
  
  
@@ -55,15 +55,23 @@ class AuthController extends Controller
      */
     public function login(Request $request)
     {
-        $credentials = request(['email', 'password']);
+        $request = request(['email', 'password']);
  
-        if (! $token = auth('api')->attempt($credentials)) {
+        if (! $token = auth('api')->attempt(["email" => $request->email,"password" => $request->password,"type_user" => 2, "state" => 1])) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
  
         return $this->respondWithToken($token);
     }
-    
+   public function login_tienda(Request $request){
+        $request = request(['email', 'password']);
+ 
+        if (! $token = auth('api')->attempt(["email" => $request->email,"password" => $request->password, "state" => 1])) {
+            return response()->json(['error' => 'Unauthorized'], 401);
+        }
+ 
+        return $this->respondWithToken($token);
+   }
     /**
      * Get the authenticated User.
      *

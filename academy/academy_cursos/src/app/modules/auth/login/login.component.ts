@@ -13,6 +13,14 @@ export class LoginComponent implements OnInit {
   email: any = null;
   password: any = null;
 
+  //auth-register
+
+  email_register: any = null;
+  password_register: any = null;
+  name: any = null;
+  surname: any = null;
+  password_confirmation: any = null;
+
   constructor(public authService: AuthService, public router: Router) {}
 
   ngOnInit(): void {
@@ -39,5 +47,38 @@ export class LoginComponent implements OnInit {
         alert('Las credenciales no existen');
       }
     });
+  }
+
+  register() {
+    if (
+      !this.email_register ||
+      !this.name ||
+      !this.surname ||
+      !this.password_register ||
+      !this.password_confirmation
+    ) {
+      alert('Todos los campos son necesarios');
+      return;
+    }
+    if (this.password_register != this.password_confirmation) {
+      alert('Las contraseñas son diferentes');
+      return;
+    }
+    let data = {
+      email: this.email_register,
+      name: this.name,
+      surname: this.surname,
+      password: this.password_register,
+    };
+    this.authService.register(data).subscribe(
+      (resp: any) => {
+        console.log(resp);
+        alert('El usuario se ha registrado correctamente');
+      },
+      (error) => {
+        alert('Las credenciales ingresadas no son correctas o ya existen ');
+        console.log(error);
+      }
+    );
   }
 }
