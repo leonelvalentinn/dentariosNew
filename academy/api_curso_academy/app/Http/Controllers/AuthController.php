@@ -27,6 +27,7 @@ class AuthController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function register() {
+        // confirmed
         $validator = Validator::make(request()->all(), [
             'name' => 'required',
             'email' => 'required|email|unique:users',
@@ -52,7 +53,7 @@ class AuthController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function login()
+    public function login(Request $request)
     {
         $credentials = request(['email', 'password']);
  
@@ -62,7 +63,7 @@ class AuthController extends Controller
  
         return $this->respondWithToken($token);
     }
- 
+    
     /**
      * Get the authenticated User.
      *
@@ -92,7 +93,7 @@ class AuthController extends Controller
      */
     public function refresh()
     {
-        return $this->respondWithToken(auth()->refresh());
+        return $this->respondWithToken(auth('api')->refresh());
     }
  
     /**
@@ -108,7 +109,7 @@ class AuthController extends Controller
             'access_token' => $token,
             'token_type' => 'bearer',
             'expires_in' => auth('api')->factory()->getTTL() * 60,
-            'user' => [
+            "user" => [
                 "name" => auth('api')->user()->name,
                 "email" => auth('api')->user()->email,
             ]

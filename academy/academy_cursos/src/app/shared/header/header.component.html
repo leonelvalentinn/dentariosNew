@@ -1390,10 +1390,13 @@
             </li>
 
             <li class="account-access rbt-user-wrapper d-none d-xl-block">
-              <a href="#"><i class="feather-user"></i>Admin</a>
+              <a href="#" *ngIf="user"
+                ><i class="feather-user"></i>{{ user.name }}</a
+              >
+              <a href="#" *ngIf="!user"><i class="feather-user"></i>Ingresar</a>
               <div class="rbt-user-menu-list-wrapper">
                 <div class="inner">
-                  <div class="rbt-admin-profile">
+                  <div class="rbt-admin-profile" *ngIf="user">
                     <div class="admin-thumbnail">
                       <img
                         src="assets/images/team/avatar.jpg"
@@ -1401,7 +1404,7 @@
                       />
                     </div>
                     <div class="admin-info">
-                      <span class="name">Nipa Bali</span>
+                      <span class="name">{{ user.name }}</span>
                       <a class="rbt-btn-link color-primary" href="profile.html"
                         >View Profile</a
                       >
@@ -1474,10 +1477,16 @@
                         <span>Settings</span>
                       </a>
                     </li>
-                    <li>
-                      <a href="index.html">
+                    <li *ngIf="user">
+                      <a href="#" onclick="return false;" (click)="logout()">
                         <i class="feather-log-out"></i>
                         <span>Logout</span>
+                      </a>
+                    </li>
+                    <li *ngIf="!user">
+                      <a href="#" onclick="return false;" (click)="logout()">
+                        <i class="feather-log-out"></i>
+                        <span>Login</span>
                       </a>
                     </li>
                   </ul>
@@ -1486,7 +1495,9 @@
             </li>
 
             <li class="access-icon rbt-user-wrapper d-block d-xl-none">
-              <a class="rbt-round-btn" href="#"><i class="feather-user"></i></a>
+              <a class="rbt-round-btn" href="#" onclick="return false;"
+                ><i class="feather-user"></i
+              ></a>
               <div class="rbt-user-menu-list-wrapper">
                 <div class="inner">
                   <div class="rbt-admin-profile">
@@ -1496,8 +1507,8 @@
                         alt="User Images"
                       />
                     </div>
-                    <div class="admin-info">
-                      <span class="name">Nipa Bali</span>
+                    <div class="admin-info" *ngIf="user">
+                      <span class="name">{{ user.name }}</span>
                       <a class="rbt-btn-link color-primary" href="profile.html"
                         >View Profile</a
                       >
@@ -1570,10 +1581,16 @@
                         <span>Settings</span>
                       </a>
                     </li>
-                    <li>
-                      <a href="index.html">
+                    <li *ngIf="user">
+                      <a href="#" onclick="return false;" (click)="logout()">
                         <i class="feather-log-out"></i>
                         <span>Logout</span>
+                      </a>
+                    </li>
+                    <li *ngIf="!user">
+                      <a href="#" onclick="return false;" (click)="logout()">
+                        <i class="feather-log-out"></i>
+                        <span>Login</span>
                       </a>
                     </li>
                   </ul>
