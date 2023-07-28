@@ -22,6 +22,7 @@ class User extends Authenticatable implements JWTSubject
         'surname',
         'email',
         'password',
+        'avatar',
         "state", // 1 es activo y 2 es desactivo
         "type_user", // 1 es de tipo cliente y 2 e ste tipo administrador
     ];
