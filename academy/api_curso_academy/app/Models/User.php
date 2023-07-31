@@ -23,6 +23,7 @@ class User extends Authenticatable implements JWTSubject
         'email',
         'password',
         'avatar',
+        'rol_id',
         "state", // 1 es activo y 2 es desactivo
         "type_user", // 1 es de tipo cliente y 2 e ste tipo administrador
     ];
@@ -64,4 +65,5 @@ class User extends Authenticatable implements JWTSubject
     {
         return [];
     }
+   
 }

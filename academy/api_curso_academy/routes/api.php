@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\Admin\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,9 +36,7 @@ Route::group([
 
 
 Route::group([
- 
     'middleware' => 'api',
 ], function ($router) {
-    Route::resource('/user',UserController::class);
-  
+    Route::resource('/users',UserController::class);
 });

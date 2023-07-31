@@ -37,8 +37,8 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {   
-        if($request -> hash_file('imagen')){
-           $path = Storage::putFile("users",$request->file("imagen"));
+        if($request ->hasFile('image')){
+           $path = Storage::putFile("users",$request->file("image"));
            $request->$request->add(["avatar" => $path]); 
         }
         if($request->password){
@@ -80,23 +80,18 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {    
-        $user = User::findOrFail($id);
-        if($request->hasFile("imagen")){
+        if($request ->hasFile('image')){
             if($user->avatar){
                 Storage::delete($user->avatar);
             }
-        }
-        if($request -> hash_file('imagen')){
-            $path = Storage::putFile("users",$request->file("imagen"));
+            $path = Storage::putFile("users",$request->file("image"));
             $request->$request->add(["avatar" => $path]); 
          }
          if($request->password){
             $request->request->add(["password"-> bcrypt($request->password)]);
          }
-         
-         $user->update($request->all());
- 
-         return response()-> json(["user" -> $user]);
+       $user->update($request->all());
+       return response()->json(["user" => $user]);
     }
 
     /**

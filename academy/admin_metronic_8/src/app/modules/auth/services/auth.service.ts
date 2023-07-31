@@ -29,6 +29,9 @@ export class AuthService implements OnDestroy {
     return this.currentUserSubject.value;
   }
 
+  token: any = null;
+  user: any = null;
+
   set currentUserValue(user: UserType) {
     this.currentUserSubject.next(user);
   }
@@ -132,7 +135,8 @@ export class AuthService implements OnDestroy {
       if (!lsValue) {
         return undefined;
       }
-
+      this.token = localStorage.getItem('token');
+      this.user = JSON.parse(lsValue);
       const authData = JSON.parse(lsValue);
       return authData;
     } catch (error) {
