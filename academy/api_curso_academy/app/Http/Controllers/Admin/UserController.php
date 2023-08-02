@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\User\UserGCollection;
+use App\Http\Resources\User\UserGResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\User;
@@ -14,9 +16,28 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $name = $request->name;
+        $surname = $request->surname;
+        $email = $request->email;
+
+        $users = User::where("type_user",2)->orderby("id","desc")->get();
+
+        return response()->json([
+            "users" => UserGCollection::make($users),
+         /*   "users" => $users->map(function($user){
+                return [
+                    "name"=>$user->name,
+                    "surname"=>$user->surname,
+                    "email"=>$user->email,
+                    "role"=>$user->role,
+                    "avatar"=>env("APP_URL")."storage/". $user->avatar,
+
+
+                ];
+            }),*/
+        ]);
     }
 
     /**
@@ -37,16 +58,16 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {   
-        if($request ->hasFile('image')){
-           $path = Storage::putFile("users",$request->file("image"));
-           $request->$request->add(["avatar" => $path]); 
+        if($request ->hasFile('imagen')){
+           $path = Storage::putFile("users",$request->file("imagen"));
+           $request->request->add(["avatar" => $path]); 
         }
         if($request->password){
-           $request->request->add(["password"-> bcrypt($request->password)]);
+           $request->request->add(["password"=> bcrypt($request->password)]);
         }
         $user = User::create($request -> all());
 
-        return response()-> json(["user" -> $user]);
+        return response()-> json(["user" => UserGResource::make($user)]);
     }
 
     /**
@@ -80,18 +101,19 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {    
-        if($request ->hasFile('image')){
+        $user = User::findOrFail($id);
+        if($request ->hasFile('imagen')){
             if($user->avatar){
                 Storage::delete($user->avatar);
             }
-            $path = Storage::putFile("users",$request->file("image"));
-            $request->$request->add(["avatar" => $path]); 
+            $path = Storage::putFile("users",$request->file("imagen"));
+            $request->request->add(["avatar" => $path]); 
          }
          if($request->password){
-            $request->request->add(["password"-> bcrypt($request->password)]);
+            $request->request->add(["password"=> bcrypt($request->password)]);
          }
        $user->update($request->all());
-       return response()->json(["user" => $user]);
+       return response()->json(["user" => UserGResource::make($user)]);
     }
 
     /**
