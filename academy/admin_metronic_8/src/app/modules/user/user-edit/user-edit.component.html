@@ -165,6 +165,19 @@
           />
           <!--end::Input-->
         </div>
+        <div class="fv-row mb-7">
+          <label class="required fw-bold fs-6 mb-2">Status</label>
+          <select
+            class="form-control form-select-solid fw-bolder"
+            name="status"
+            placeholder="Status"
+            [(ngModel)]="state"
+          >
+            <option value="1">Activo</option>
+            <option value="2">Desactivo</option>
+          </select>
+        </div>
+
         <!--end::Input group-->
         <div class="fv-row mb-7">
           <!--begin::Label-->
@@ -249,7 +262,7 @@
           data-kt-users-modal-action="submit"
           (click)="store()"
         >
-          <span class="indicator-label">Registrar</span>
+          <span class="indicator-label">Registrar Cambios</span>
           <!-- <span class="indicator-progress"
             >Please wait...
             <span

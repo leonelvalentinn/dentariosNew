@@ -38,11 +38,24 @@
         <!--end::Svg Icon-->
         <input
           type="text"
+          [(ngModel)]="search"
           data-kt-user-table-filter="search"
           class="form-control form-control-solid w-250px ps-14"
           placeholder="Search user"
+          (keyup.enter)="listUser()"
         />
       </div>
+      <select
+        class="form-control"
+        name="status"
+        placeholder="Filtrar por Estado"
+        [(ngModel)]="state"
+        (change)="listUser()"
+      >
+        <option value="0">Todos</option>
+        <option value="1">Activo</option>
+        <option value="2">Desactivo</option>
+      </select>
       <!--end::Search-->
     </div>
     <!--begin::Card title-->
@@ -666,7 +679,7 @@
                 class="badge badge-light-danger fw-bolder"
                 *ngIf="USER.state == 2"
               >
-                DES-ACTIVO
+                DESACTIVO
               </div>
             </td>
             <!--end::Last login=-->

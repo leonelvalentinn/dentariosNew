@@ -1,17 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\Course;
 
-use App\Http\Controllers\Controller;
-use App\Http\Resources\User\UserGCollection;
-use App\Http\Resources\User\UserGResource;
 use Illuminate\Http\Request;
+use App\Models\Course\Categorie;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
-use App\Models\User;
 
-class UserController extends Controller
+
+class CategorieController extends Controller
 {
-    /**
+     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -21,17 +20,17 @@ class UserController extends Controller
         $search = $request->search;
         $state = $request->state;
       
-        $users = User::filterAdvance($search,$state)->where("type_user",2)->orderby("id","desc")->get();
+        $categories = Categorie::filterAdvance($search,$state)->orderby("id","desc")->get();
 
         return response()->json([
-            "users" => UserGCollection::make($users),
-         /*   "users" => $users->map(function($user){
+            "categories" => CategorieCollection::make($categories),
+         /*   "categories" => $categories->map(function($categorie){
                 return [
-                    "name"=>$user->name,
-                    "surname"=>$user->surname,
-                    "email"=>$user->email,
-                    "role"=>$user->role,
-                    "avatar"=>env("APP_URL")."storage/". $user->avatar,
+                    "name"=>$categorie->name,
+                    "surname"=>$categorie->surname,
+                    "email"=>$categorie->email,
+                    "role"=>$categorie->role,
+                    "imagen"=>env("APP_URL")."storage/". $categorie->imagen,
 
 
                 ];
@@ -57,16 +56,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {   
-        if($request ->hasFile('imagen')){
-           $path = Storage::putFile("users",$request->file("imagen"));
-           $request->request->add(["avatar" => $path]); 
+        if($request ->hasFile('portada')){
+           $path = Storage::putFile("categories",$request->file("imagen"));
+           $request->request->add(["imagen" => $path]); 
         }
-        if($request->password){
-           $request->request->add(["password"=> bcrypt($request->password)]);
-        }
-        $user = User::create($request -> all());
+       
+        $categorie = Categorie::create($request -> all());
 
-        return response()-> json(["user" => UserGResource::make($user)]);
+        return response()-> json(["categorie" => CategorieResource::make($categorie)]);
     }
 
     /**
@@ -100,19 +97,17 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {    
-        $user = User::findOrFail($id);
+        $categorie = Categorie::findOrFail($id);
         if($request ->hasFile('imagen')){
-            if($user->avatar){
-                Storage::delete($user->avatar);
+            if($categorie->imagen){
+                Storage::delete($categorie->imagen);
             }
-            $path = Storage::putFile("users",$request->file("imagen"));
-            $request->request->add(["avatar" => $path]); 
+            $path = Storage::putFile("categories",$request->file("imagen"));
+            $request->request->add(["imagen" => $path]); 
          }
-         if($request->password){
-            $request->request->add(["password"=> bcrypt($request->password)]);
-         }
-       $user->update($request->all());
-       return response()->json(["user" => UserGResource::make($user)]);
+       
+       $categorie->update($request->all());
+       return response()->json(["categorie" => CategorieResource::make($categorie)]);
     }
 
     /**
@@ -123,8 +118,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::findOrFail($id);
-        $user->delete();
+        $categorie = Categorie::findOrFail($id);
+        $categorie->delete();
         return response()->json(["message" => 200]);
     }
 }

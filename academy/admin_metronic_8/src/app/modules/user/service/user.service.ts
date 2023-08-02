@@ -15,12 +15,19 @@ export class UserService {
     this.isLoadingSubject = new BehaviorSubject<boolean>(false);
     this.isLoading$ = this.isLoadingSubject.asObservable();
   }
-  listUsers() {
+  listUsers(search: any, state: any) {
     this.isLoadingSubject.next(true);
     let headers = new HttpHeaders({
       Authorization: 'Bearer' + this.authservice.token,
     });
-    let URL = URL_SERVICIOS + '/users';
+    let LINK = '?T=';
+    if (search) {
+      LINK += '&search=' + search;
+    }
+    if (state) {
+      LINK += '&state=' + state;
+    }
+    let URL = URL_SERVICIOS + '/users/' + LINK;
     return this.http
       .get(URL, { headers: headers })
       .pipe(finalize(() => this.isLoadingSubject.next(false)));

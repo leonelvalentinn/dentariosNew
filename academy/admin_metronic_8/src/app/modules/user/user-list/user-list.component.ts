@@ -13,14 +13,22 @@ import { UserDeleteComponent } from '../user-delete/user-delete.component';
 export class UserListComponent implements OnInit {
   USERS: any = [];
   isLoading: any = null;
+
+  search: any = null;
+  state: any = null;
   constructor(public modalService: NgbModal, public userService: UserService) {}
 
   ngOnInit(): void {
     this.isLoading = this.userService.isLoading$;
-    this.userService.listUsers().subscribe((resp: any) => {
-      console.log(resp);
-      this.USERS = resp.users.data;
-    });
+    this.listUser();
+  }
+  listUser() {
+    this.userService
+      .listUsers(this.search, this.state)
+      .subscribe((resp: any) => {
+        console.log(resp);
+        this.USERS = resp.users.data;
+      });
   }
   openModalCreateUser() {
     const modalRef = this.modalService.open(UserAddComponent, {
