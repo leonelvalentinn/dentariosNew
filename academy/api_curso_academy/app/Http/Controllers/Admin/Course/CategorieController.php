@@ -6,12 +6,13 @@ use Illuminate\Http\Request;
 use App\Models\Course\Categorie;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
-
+use App\Http\Resources\Cursos\Categorie\CategorieResource;
+use App\Http\Resources\Cursos\Categorie\CategorieCollection;
 
 class CategorieController extends Controller
 {
-     /**
-     * Display a listing of the resource.
+    /**
+     * Display a listing of the resource
      *
      * @return \Illuminate\Http\Response
      */
@@ -30,7 +31,7 @@ class CategorieController extends Controller
                     "surname"=>$categorie->surname,
                     "email"=>$categorie->email,
                     "role"=>$categorie->role,
-                    "imagen"=>env("APP_URL")."storage/". $categorie->imagen,
+                    "avatar"=>env("APP_URL")."storage/". $categorie->avatar,
 
 
                 ];
@@ -57,10 +58,10 @@ class CategorieController extends Controller
     public function store(Request $request)
     {   
         if($request ->hasFile('portada')){
-           $path = Storage::putFile("categories",$request->file("imagen"));
+           $path = Storage::putFile("categories",$request->file("portada"));
            $request->request->add(["imagen" => $path]); 
         }
-       
+      
         $categorie = Categorie::create($request -> all());
 
         return response()-> json(["categorie" => CategorieResource::make($categorie)]);
@@ -98,11 +99,11 @@ class CategorieController extends Controller
     public function update(Request $request, $id)
     {    
         $categorie = Categorie::findOrFail($id);
-        if($request ->hasFile('imagen')){
+        if($request ->hasFile('portada')){
             if($categorie->imagen){
                 Storage::delete($categorie->imagen);
             }
-            $path = Storage::putFile("categories",$request->file("imagen"));
+            $path = Storage::putFile("categories",$request->file("portada"));
             $request->request->add(["imagen" => $path]); 
          }
        
@@ -122,4 +123,6 @@ class CategorieController extends Controller
         $categorie->delete();
         return response()->json(["message" => 200]);
     }
+
+   
 }

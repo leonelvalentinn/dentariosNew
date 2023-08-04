@@ -3,9 +3,10 @@
 namespace App\Models\Course;
 
 use Carbon\Carbon;
+
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Categorie extends Model
 {
@@ -14,29 +15,34 @@ class Categorie extends Model
     protected $fillable = [
         "name",
         "imagen",
-        "categories_id",
+        "categorie_id",
         "state",
+
     ];
 
-    public function setCreatedAtAttribute($value){
-        date_default_timezone_set("America/Mexico_City");
-        $this->attributes["created_at"] = Carbon::now();
+    public function setCreatedAtAttributte($value){
+     date_default_timezone_set("America/Mexico_City");
+     $this->attributes["created_at"] = Carbon::now();
+
     }
 
-    public function setUpdateAtAtrribute($value){
-        date_default_timezone_set("America/Mexico_City");
-        $this->attribute["updated_at"] = Carbon::now();
+    public function setUpdatedAtAttributte($value){
+     date_default_timezone_set("America/Mexico_City");
+     $this->attributes["updated_at"] = Carbon::now();
+
     }
 
     public function children(){
-      return $this->hasMany(Categorie::class, "categorie_id");
-    }
-    public function father(){
 
-        return $this->belongsTo(Categorie::class,"categorie_id");
+        return $this->hasMany(Categorie::class,"categorie_id");
+
     }
-   
-    function scopeFilterAdvance($query,$search,$state)
+
+    public function father(){
+        return $this->belongsTo(Categorie::class, "categorie_id");
+    }
+    
+      function scopeFilterAdvance($query,$search,$state)
     {
         if($search){
             $query->where('name','like','%'.$search. '%');
@@ -47,7 +53,5 @@ class Categorie extends Model
 
         return $query;
     }
-
-
-
+   
 }
