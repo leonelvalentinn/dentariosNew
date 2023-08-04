@@ -19,6 +19,9 @@ export class UserEditComponent implements OnInit {
   password: any = null;
   confirmation_password: any = null;
   state: any = 1;
+  is_instructor: any = null;
+  profesion: any = null;
+  description: any = null;
   IMAGEN_PREVISUALIZA: any = './assets/media/avatars/300-6.jpg';
   FILE_AVATAR: any = null;
 
@@ -36,6 +39,9 @@ export class UserEditComponent implements OnInit {
     this.email = this.user.email;
     this.state = this.user.state;
     this.IMAGEN_PREVISUALIZA = this.user.avatar;
+    this.is_instructor = this.user.is_instructor;
+    this.profesion = this.user.profesion;
+    this.description = this.user.description;
   }
 
   processAvatar($event: any) {
@@ -76,6 +82,11 @@ export class UserEditComponent implements OnInit {
     formData.append('surname', this.surname);
     formData.append('email', this.email);
     formData.append('state', this.state);
+    if (this.is_instructor) {
+      formData.append('is_instructor', this.is_instructor ? '1' : '0');
+      formData.append('profesion', this.profesion);
+      formData.append('description', this.description);
+    }
     if (this.password) {
       formData.append('password', this.password);
     }
@@ -93,5 +104,8 @@ export class UserEditComponent implements OnInit {
       });
       this.modal.close();
     });
+  }
+  isInstructor() {
+    this.is_instructor = !this.is_instructor;
   }
 }
