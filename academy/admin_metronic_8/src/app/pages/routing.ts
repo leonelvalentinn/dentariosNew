@@ -51,6 +51,11 @@ const Routing: Routes = [
       ),
   },
   {
+    path: 'cursos',
+    loadChildren: () =>
+      import('../modules/course/course.module').then((m) => m.CourseModule),
+  },
+  {
     path: '',
     redirectTo: '/dashboard',
     pathMatch: 'full',
