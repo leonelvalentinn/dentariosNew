@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Admin\Course;
 
+use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\Course\Course;
+use App\Models\Course\Categorie;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Resources\Course\CourseGResource;
@@ -40,6 +42,24 @@ class CourseGController extends Controller
         ]);
     }
 
+    public function config(){
+
+        $categories = Categorie::where("categorie_id", NULL)->orderBy("id","desc")->get();
+        $subcategories = Categorie::where("categorie_id","<>", NULL)->orderBy("id","desc")->get();
+        $instructores = User::where("is_instructor",1)->orderBy("id","desc")->get();
+
+        return response()->json([
+            "categories" => $categories,
+            "subcategories" => $subcategories,
+            "instructores" => $instructores->map(function($user){
+                return [
+                   "id" => $user->id,
+                   "full_name"=> $user->name.' '. $user->surname,
+                ];
+            }),
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -57,17 +77,21 @@ class CourseGController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
+    {   $is_exist = Course::where("title",$request->title)->first();
+        if($is_exist){
+          return response()->json(["message" => 403, "message_text" => "YA EXISTE UN CURSO CON ESTE TITULO"]);
+        }
         if($request ->hasFile('portada')){
            $path = Storage::putFile("courses",$request->file("portada"));
            $request->request->add(["imagen" => $path]); 
         }
         $request->request->add(["slug" => Str::slug($request->title)]);
-        $request->request->add(["requirements" => json_encode($request->requirements)]);
-        $request->request->add(["who_is_it_for" => json_encode($request->who_is_it_for)]);
+          $request->request->add(["requirements" => json_encode(explode(",",$request->requirements))]);
+        $request->request->add(["who_is_it_for" => json_encode(explode(",",$request->who_is_it_for))]);
+     
         $course = Course::create($request -> all());
 
-        return response()-> json(["course" => CourseGResource::make($course)]);
+     return response()->json(["message"=> 200]);
     }
 
     /**
@@ -101,6 +125,11 @@ class CourseGController extends Controller
      */
     public function update(Request $request, $id)
     {    
+
+        $is_exist = Course::where("id","<>", $id)->where("title",$request->title)->first();
+        if($is_exist){
+          return response()->json(["message" => 403, "message_text" => "YA EXISTE UN CURSO CON ESTE TITULO"]);
+        }
         $course = Course::findOrFail($id);
         if($request ->hasFile('portada')){
             if($course->imagen){
@@ -110,11 +139,11 @@ class CourseGController extends Controller
             $request->request->add(["imagen" => $path]); 
          }
          $request->request->add(["slug" => Str::slug($request->title)]);
-         $request->request->add(["requirements" => json_encode($request->requirements)]);
-         $request->request->add(["who_is_it_for" => json_encode($request->who_is_it_for)]);
-       
+        //$request->request->add(["requirements" => json_encode(explode(",",$request->requirements))]);
+       // $request->request->add(["who_is_it_for" => json_encode(explode(",",$request->who_is_it_for))]);
+       //"course" => CourseGResource::make($course)
        $course->update($request->all());
-       return response()->json(["categorie" => CourseGResource::make($course)]);
+       return response()->json(["course" => CourseGResource::make($course)]);
     }
 
     /**
