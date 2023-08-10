@@ -15,11 +15,39 @@ export class CourseService {
     this.isLoadingSubject = new BehaviorSubject<boolean>(false);
     this.isLoading$ = this.isLoadingSubject.asObservable();
   }
+  listCourse(search: any, state: any) {
+    this.isLoadingSubject.next(true);
+    let headers = new HttpHeaders({
+      Authorization: 'Bearer' + this.authservice.token,
+    });
+    let LINK = '?T=';
+    if (search) {
+      LINK += '&search=' + search;
+    }
+    if (state) {
+      LINK += '&state=' + state;
+    }
+
+    let URL = URL_SERVICIOS + '/course' + LINK;
+    return this.http
+      .get(URL, { headers: headers })
+      .pipe(finalize(() => this.isLoadingSubject.next(false)));
+  }
   lisConfig() {
     let headers = new HttpHeaders({
       Authorization: 'Bearer ' + this.authservice.token,
     });
     let URL = URL_SERVICIOS + '/course/config';
+    this.isLoadingSubject.next(true);
+    return this.http
+      .get(URL, { headers: headers })
+      .pipe(finalize(() => this.isLoadingSubject.next(false)));
+  }
+  showCourse(course_id: any) {
+    let headers = new HttpHeaders({
+      Authorization: 'Bearer ' + this.authservice.token,
+    });
+    let URL = URL_SERVICIOS + '/course/' + course_id;
     this.isLoadingSubject.next(true);
     return this.http
       .get(URL, { headers: headers })
