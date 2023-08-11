@@ -4,6 +4,8 @@ import { CourseComponent } from './course.component';
 import { CourseAddComponent } from './course-add/course-add.component';
 import { CourseEditComponent } from './course-edit/course-edit.component';
 import { CourseListComponent } from './course-list/course-list.component';
+import { SectionAddComponent } from './section/section-add/section-add.component';
+import { ClaseAddComponent } from './section/clases/clase-add/clase-add.component';
 
 const routes: Routes = [
   {
@@ -15,12 +17,20 @@ const routes: Routes = [
         component: CourseAddComponent,
       },
       {
-        path: 'editar/:id',
+        path: 'list',
+        component: CourseListComponent,
+      },
+      {
+        path: 'list/editar/:id',
         component: CourseEditComponent,
       },
       {
-        path: 'list',
-        component: CourseListComponent,
+        path: 'list/secciones/:id',
+        component: SectionAddComponent,
+      },
+      {
+        path: 'list/secciones/clases/:id',
+        component: ClaseAddComponent,
       },
     ],
   },

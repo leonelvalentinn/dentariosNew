@@ -3,6 +3,7 @@ import { CourseService } from '../service/course.service';
 
 import { ActivatedRoute } from '@angular/router';
 import { Toaster } from 'ngx-toast-notifications';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-course-edit',
@@ -36,10 +37,14 @@ export class CourseEditComponent implements OnInit {
   state: any = 1;
   courses_id: any;
   course_selected: any = null;
+  video_curso: any = null;
+  link_video_course: any = null;
+  isUploadVideo: Boolean = false;
   constructor(
     public courseService: CourseService,
     public toaster: Toaster,
-    public activedRoute: ActivatedRoute
+    public activedRoute: ActivatedRoute,
+    public sanitizer: DomSanitizer
   ) {}
 
   ngOnInit(): void {
@@ -76,6 +81,10 @@ export class CourseEditComponent implements OnInit {
       this.what_is_fors = this.course_selected.who_is_it_for;
       this.IMAGEN_PREVISUALIZA = this.course_selected.imagen;
       this.state = this.course_selected.state;
+      if (this.course_selected.vimeo_id) {
+        this.link_video_course =
+          'https://player.vimeo.com/video/' + this.course_selected.vimeo_id;
+      }
     });
   }
 
@@ -198,6 +207,37 @@ export class CourseEditComponent implements OnInit {
       });
   }
 
+  uploadVideo() {
+    let formData = new FormData();
+    formData.append('video', this.video_curso);
+    console.log(this.video_curso);
+    this.isUploadVideo = true;
+    this.courseService
+      .uploadVideo(formData, this.courses_id)
+      .subscribe((resp: any) => {
+        this.isUploadVideo = false;
+        console.log(resp);
+        this.link_video_course = resp.link_video;
+      });
+  }
+  urlVideo() {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(
+      this.link_video_course
+    );
+  }
+  processVideo($event: any) {
+    console.log($event.target.files[0].type);
+    if ($event.target.files[0].type.indexOf('video') < 0) {
+      this.toaster.open({
+        text: 'Solo se aceptan videos',
+        caption: 'Mensaje de validación',
+        type: 'danger',
+      });
+      return;
+    }
+
+    this.video_curso = $event.target.files[0];
+  }
   processFile($event: any) {
     if ($event.target.files[0].type.indexOf('image') < 0) {
       this.toaster.open({

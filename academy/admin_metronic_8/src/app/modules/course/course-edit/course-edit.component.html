@@ -163,6 +163,41 @@
         </div>
       </div>
       <div class="row mb-8">
+        <div class="col-5">
+          <label class="form-label">Sube tu video de trailer: *</label>
+          <div class="custom-file">
+            <input
+              type="file"
+              class="custom-file-input"
+              id="customFile"
+              accept=".mp4"
+              (change)="processVideo($event)"
+            />
+          </div>
+        </div>
+        <div class="col-5">
+          <button
+            class="btn btn-sm btn-primary"
+            (click)="uploadVideo()"
+            *ngIf="!isUploadVideo"
+          >
+            +
+          </button>
+          <span
+            class="spinner-border spinner-border-sm align-middle ms-2"
+            *ngIf="isUploadVideo"
+          ></span>
+        </div>
+        <div *ngIf="link_video_course" class="py-4">
+          <iframe
+            [src]="urlVideo()"
+            frameborder="0"
+            allow="autoplay; fullscreen"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+      <div class="row mb-8">
         <!--begin::Col-->
         <div class="col-xl-3">
           <div class="fs-6 fw-bold mt-2 mb-3">Descripción:</div>

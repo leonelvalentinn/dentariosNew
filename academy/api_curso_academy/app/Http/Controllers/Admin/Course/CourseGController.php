@@ -7,6 +7,9 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\Course\Course;
 use App\Models\Course\Categorie;
+
+use Owenoj\LaravelGetId3\GetId3;
+use Vimeo\Laravel\Facades\Vimeo;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Resources\Course\CourseGResource;
@@ -24,7 +27,7 @@ class CourseGController extends Controller
         $search = $request->search;
         $state = $request->state;
       
-        $courses = Course::orderBy("id","desc")->get();
+        $courses = Course::filterAdvance($search,$state)->orderBy("id","desc")->get();
 
         return response()->json([
             "courses" => CourseGCollection::make($courses),
@@ -94,6 +97,27 @@ class CourseGController extends Controller
      return response()->json(["message"=> 200]);
     }
 
+    public function upload_video(Request $request, $id){
+       
+        $time = 0;
+    
+         //instantiate class with file
+        $track = new GetId3($request->file('video'));
+
+        $time = $track->getPlaytimeSeconds();
+        
+      $response =  Vimeo::upload($request->file('video'));
+
+      $course = Course::findOrFail($id);
+      $vimeo_id = explode("/", $response)[2];
+      $course->update(["vimeo_id" => $vimeo_id , "time" => date("H:i:s",$time)]);
+        
+        return response()->json([
+                
+                "link_video" => "https://player.vimeo.com/video/".$vimeo_id,
+                
+            ]);
+    }
     /**
      * Display the specified resource.
      *
