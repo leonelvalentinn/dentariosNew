@@ -140,7 +140,8 @@ export class CourseService {
     let headers = new HttpHeaders({
       Authorization: 'Bearer ' + this.authservice.token,
     });
-    let URL = URL_SERVICIOS + '/course-clases?course_id=' + course_section_id;
+    let URL =
+      URL_SERVICIOS + '/course-clases?course_section_id=' + course_section_id;
     this.isLoadingSubject.next(true);
     return this.http
       .get(URL, { headers: headers })

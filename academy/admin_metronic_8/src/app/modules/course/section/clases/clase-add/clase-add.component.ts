@@ -55,8 +55,9 @@ export class ClaseAddComponent implements OnInit {
     formData.append('name', this.title);
     formData.append('description', this.description);
     formData.append('course_section_id', this.section_id);
+
     this.FILES.forEach((file: any, index: number) => {
-      formData.append('files[+"index"+]', file);
+      formData.append('files[' + index + ']', file);
     });
     this.courseService.registerClase(formData).subscribe((resp: any) => {
       console.log(resp);
