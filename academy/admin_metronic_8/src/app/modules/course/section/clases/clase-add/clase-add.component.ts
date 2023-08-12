@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CourseService } from '../../../service/course.service';
 import { ActivatedRoute } from '@angular/router';
 import { Toaster } from 'ngx-toast-notifications';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ClaseEditComponent } from '../clase-edit/clase-edit.component';
 
 @Component({
   selector: 'app-clase-add',
@@ -19,7 +21,8 @@ export class ClaseAddComponent implements OnInit {
   constructor(
     public courseService: CourseService,
     public activedRouter: ActivatedRoute,
-    public toaster: Toaster
+    public toaster: Toaster,
+    public modalService: NgbModal
   ) {}
 
   ngOnInit(): void {
@@ -30,7 +33,7 @@ export class ClaseAddComponent implements OnInit {
     this.isLoading = this.courseService.isLoading$;
     this.courseService.lisClases(this.section_id).subscribe((resp: any) => {
       console.log(resp);
-      this.CLASES = resp.clases;
+      this.CLASES = resp.clases.data;
     });
   }
   save() {
@@ -67,7 +70,17 @@ export class ClaseAddComponent implements OnInit {
   public onChange(event: any) {
     this.description = event.editor.getData();
   }
-  editClases(CLASE: any) {}
+  editClases(CLASE: any) {
+    const modalRef = this.modalService.open(ClaseEditComponent, {
+      centered: true,
+      size: 'md',
+    });
+    modalRef.componentInstance.clase_selected = CLASE;
+    modalRef.componentInstance.ClaseE.subscribe((CLASEE: any) => {
+      let INDEX = this.CLASES.findIndex((item: any) => item.id == CLASEE.id);
+      this.CLASES[INDEX] = CLASEE;
+    });
+  }
   deleteClases(CLASE: any) {}
   processFile($event: any) {
     for (const file of $event.target.files) {
