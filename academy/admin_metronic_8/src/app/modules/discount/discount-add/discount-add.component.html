@@ -1,0 +1,515 @@
+<div class="card">
+  <!--begin::Card header-->
+  <div class="card-header">
+    <!--begin::Card title-->
+    <div class="card-title fs-3 fw-bolder">
+      Registrar Nuevo Campaña de desceunto
+    </div>
+    <!--end::Card title-->
+  </div>
+  <!--end::Card header-->
+  <!--begin::Form-->
+  <form
+    id="kt_project_settings_form"
+    class="form fv-plugins-bootstrap5 fv-plugins-framework"
+    novalidate="novalidate"
+  >
+    <!--  <span
+      class="spinner-border spinner-border-sm align-middle ms-2"
+      *ngIf="isLoading | async"
+    ></span>
+   -->
+    <div class="card-body p-9">
+      <!--begin::Row-->
+
+      <!--end::Row-->
+      <!--begin::Row-->
+      <div class="row mb-8 align-items-center">
+        <!--begin::Col-->
+        <div class="col-9 my-5">
+          <div class="row g-9">
+            <div class="col-6">
+              <label
+                class="btn btn-outline btn-outline-dashed btn-outline-default d-flex text-start p-6"
+                data-kt-button="true"
+                [ngClass]="{ active: type_campaing == 1 }"
+              >
+                <span
+                  class="form-check form-check-custom form-check-solid form-check-sm align-items-start mt-1"
+                >
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="  type_campaing"
+                    [checked]="type_campaing == 1"
+                    (click)="selectedTypeCampaing(1)"
+                  />
+                </span>
+                <span class="ms-5">
+                  <span class="fs-6 fw-bolder mb-1 d-block"
+                    >Campaña Normal</span
+                  >
+                </span>
+              </label>
+            </div>
+            <div class="col-6">
+              <label
+                class="btn btn-outline btn-outline-dashed btn-outline-default d-flex text-start p-6"
+                data-kt-button="true"
+                [ngClass]="{ active: type_campaing == 2 }"
+              >
+                <span
+                  class="form-check form-check-custom form-check-solid form-check-sm align-items-start mt-1"
+                >
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name=" type_campaing"
+                    [checked]="type_campaing == 2"
+                    (click)="selectedTypeCampaing(2)"
+                  />
+                </span>
+                <span class="ms-5">
+                  <span class="fs-6 fw-bolder mb-1 d-block">Campaña Flash</span>
+                </span>
+              </label>
+            </div>
+            <div class="col-6">
+              <label
+                class="btn btn-outline btn-outline-dashed btn-outline-default d-flex text-start p-6"
+                data-kt-button="true"
+                [ngClass]="{ active: type_campaing == 3 }"
+              >
+                <span
+                  class="form-check form-check-custom form-check-solid form-check-sm align-items-start mt-1"
+                >
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="type_campaing"
+                    [checked]="type_campaing == 3"
+                    (click)="selectedTypeCampaing(3)"
+                  />
+                </span>
+                <span class="ms-5">
+                  <span class="fs-6 fw-bolder mb-1 d-block"
+                    >Campaña Banner</span
+                  >
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <!--end::Col-->
+        <!--begin::Col-->
+        <div class="col-9 my-5">
+          <div class="row g-9">
+            <div class="col-6">
+              <label
+                class="btn btn-outline btn-outline-dashed btn-outline-default d-flex text-start p-6"
+                data-kt-button="true"
+                [ngClass]="{ active: type_discount == 1 }"
+              >
+                <span
+                  class="form-check form-check-custom form-check-solid form-check-sm align-items-start mt-1"
+                >
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="type_discount"
+                    [checked]="type_discount == 1"
+                    (click)="selectedTypeDiscount(1)"
+                  />
+                </span>
+                <span class="ms-5">
+                  <span class="fs-6 fw-bolder mb-1 d-block">Porcentaje</span>
+                </span>
+              </label>
+            </div>
+            <div class="col-6">
+              <label
+                class="btn btn-outline btn-outline-dashed btn-outline-default d-flex text-start p-6"
+                data-kt-button="true"
+                [ngClass]="{ active: type_discount == 2 }"
+              >
+                <span
+                  class="form-check form-check-custom form-check-solid form-check-sm align-items-start mt-1"
+                >
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="type_discount"
+                    [checked]="type_discount == 2"
+                    (click)="selectedTypeDiscount(2)"
+                  />
+                </span>
+                <span class="ms-5">
+                  <span class="fs-6 fw-bolder mb-1 d-block">Monto fijo</span>
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <label for="" class="fs-6 fw-bold mt-2 mb-3">Fecha de Inicio</label>
+          <div class="input-group input-group-solid">
+            <input
+              type="date"
+              name="start_date"
+              class="form-control form-control-lg form-control-solid"
+              [(ngModel)]="start_date"
+            />
+          </div>
+        </div>
+
+        <div class="col-4">
+          <label for="" class="fs-6 fw-bold mt-2 mb-3">Fecha de fin </label>
+          <div class="input-group input-group-solid">
+            <input
+              type="date"
+              name="end_date"
+              class="form-control form-control-lg form-control-solid"
+              [(ngModel)]="end_date"
+            />
+          </div>
+        </div>
+        <div class="col-12">
+          <label for="" class="fs-6 fw-bold mt-2 mb-3">Descuento</label>
+          <input
+            type="number"
+            name="discount"
+            class="form-control form-check-solid"
+            [(ngModel)]="discount"
+          />
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="col-3">
+          <label for="" class="fs-6 fw-bold mt-2 mb-3"
+            >Selecciona tipo de cupon</label
+          >
+          <div class="row g-9">
+            <div class="col-12">
+              <label
+                class="btn btn-outline btn-outline-dashed btn-outline-default d-flex text-start p-6"
+                data-kt-button="true"
+                [ngClass]="{ active: discount_type == 1 }"
+              >
+                <span
+                  class="form-check form-check-custom form-check-solid form-check-sm align-items-start mt-1"
+                >
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="discount_type"
+                    [checked]="discount_type == 1"
+                    (click)="selectedTypeCoupon(1)"
+                  />
+                </span>
+                <span class="ms-5">
+                  <span class="fs-6 fw-bolder mb-1 d-block">Cursos</span>
+                </span>
+              </label>
+            </div>
+            <div class="col-12" *ngIf="type_campaing == 1">
+              <label
+                class="btn btn-outline btn-outline-dashed btn-outline-default d-flex text-start p-6"
+                data-kt-button="true"
+                [ngClass]="{ active: discount_type == 2 }"
+              >
+                <span
+                  class="form-check form-check-custom form-check-solid form-check-sm align-items-start mt-1"
+                >
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="discount_type"
+                    [checked]="discount_type == 2"
+                    (click)="selectedTypeCoupon(2)"
+                  />
+                </span>
+                <span class="ms-5">
+                  <span class="fs-6 fw-bolder mb-1 d-block">Categoria</span>
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="col-12" *ngIf="discount_type == 2">
+            <label class="fs-6 fw-bold mt-2 mb-3">Selecciona Categoria:</label>
+            <select
+              class="form-control form-select-solid fw-bolder"
+              name="categorie"
+              placeholder="Seleccione categoria"
+              [(ngModel)]="categorie_id"
+            ></select>
+            <ng-container *ngFor="let categorie of categories">
+              <option [value]="categorie.id">{{ categorie.name }}</option>
+            </ng-container>
+          </div>
+          <div class="col-12" *ngIf="discount_type == 1">
+            <label class="fs-6 fw-bold mt-2 mb-3">Selecciona Curso:</label>
+            <select
+              class="form-control form-select-solid fw-bolder"
+              name="course"
+              placeholder="Seleccione categoria"
+              [(ngModel)]="course_id"
+            ></select>
+          </div>
+          <ng-container *ngFor="let course of courses">
+            <option [value]="course.id">{{ course.name }}</option>
+          </ng-container>
+        </div>
+        <button class="btn btn-sm btn-primary" (click)="addCategorieSelected()">
+          +
+        </button>
+
+        <div class="col-8" *ngIf="discount_type == 1">
+          <div class="table-responsive">
+            <!--begin::Table-->
+            <table
+              class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4"
+            >
+              <!--begin::Table head-->
+              <thead>
+                <tr class="fw-bolder text-muted">
+                  <th class="w-25px">
+                    <div
+                      class="form-check form-check-sm form-check-custom form-check-solid"
+                    >
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value="1"
+                        data-kt-check="true"
+                        data-kt-check-target=".widget-9-check"
+                      />
+                    </div>
+                  </th>
+                  <th class="min-w-200px">Authors</th>
+                  <th class="min-w-150px">Company</th>
+                  <th class="min-w-150px">Progress</th>
+                  <th class="min-w-100px text-end">Actions</th>
+                </tr>
+              </thead>
+              <!--end::Table head-->
+              <!--begin::Table body-->
+              <tbody>
+                <tr>
+                  <td>
+                    <div
+                      class="form-check form-check-sm form-check-custom form-check-solid"
+                    >
+                      <input
+                        class="form-check-input widget-9-check"
+                        type="checkbox"
+                        value="1"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <div class="symbol symbol-45px me-5">
+                        <img src="assets/media/avatars/300-14.jpg" alt="" />
+                      </div>
+                      <div class="d-flex justify-content-start flex-column">
+                        <a
+                          href="#"
+                          class="text-dark fw-bolder text-hover-primary fs-6"
+                          >Ana Simmons</a
+                        >
+                        <span class="text-muted fw-bold text-muted d-block fs-7"
+                          >HTML, JS, ReactJS</span
+                        >
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <a
+                      href="#"
+                      class="text-dark fw-bolder text-hover-primary d-block fs-6"
+                      >Intertico</a
+                    >
+                    <span class="text-muted fw-bold text-muted d-block fs-7"
+                      >Web, UI/UX Design</span
+                    >
+                  </td>
+
+                  <td>
+                    <div class="d-flex justify-content-end flex-shrink-0">
+                      <a
+                        href="#"
+                        class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm"
+                      >
+                        <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
+                        <span class="svg-icon svg-icon-3">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                          >
+                            <path
+                              d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z"
+                              fill="currentColor"
+                            ></path>
+                            <path
+                              opacity="0.5"
+                              d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z"
+                              fill="currentColor"
+                            ></path>
+                            <path
+                              opacity="0.5"
+                              d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z"
+                              fill="currentColor"
+                            ></path>
+                          </svg>
+                        </span>
+                        <!--end::Svg Icon-->
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+              <!--end::Table body-->
+            </table>
+            <!--end::Table-->
+          </div>
+        </div>
+        <div class="col-8" *ngIf="discount_type == 2">
+          <div class="table-responsive">
+            <!--begin::Table-->
+            <table
+              class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4"
+            >
+              <!--begin::Table head-->
+              <thead>
+                <tr class="fw-bolder text-muted">
+                  <th class="w-25px">
+                    <div
+                      class="form-check form-check-sm form-check-custom form-check-solid"
+                    >
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value="1"
+                        data-kt-check="true"
+                        data-kt-check-target=".widget-9-check"
+                      />
+                    </div>
+                  </th>
+                  <th class="min-w-200px">hola</th>
+
+                  <th class="min-w-100px text-end">Actions</th>
+                </tr>
+              </thead>
+              <!--end::Table head-->
+              <!--begin::Table body-->
+              <tbody>
+                <tr>
+                  <td>
+                    <div
+                      class="form-check form-check-sm form-check-custom form-check-solid"
+                    >
+                      <input
+                        class="form-check-input widget-9-check"
+                        type="checkbox"
+                        value="1"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <div class="symbol symbol-45px me-5">
+                        <img src="assets/media/avatars/300-14.jpg" alt="" />
+                      </div>
+                      <div class="d-flex justify-content-start flex-column">
+                        <a
+                          href="#"
+                          class="text-dark fw-bolder text-hover-primary fs-6"
+                          >Ana Simmons</a
+                        >
+                        <span class="text-muted fw-bold text-muted d-block fs-7"
+                          >HTML, JS, ReactJS</span
+                        >
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <a
+                      href="#"
+                      class="text-dark fw-bolder text-hover-primary d-block fs-6"
+                      >Intertico</a
+                    >
+                    <span class="text-muted fw-bold text-muted d-block fs-7"
+                      >Web, UI/UX Design</span
+                    >
+                  </td>
+
+                  <td>
+                    <div class="d-flex justify-content-end flex-shrink-0">
+                      <a
+                        href="#"
+                        class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm"
+                      >
+                        <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
+                        <span class="svg-icon svg-icon-3">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                          >
+                            <path
+                              d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z"
+                              fill="currentColor"
+                            ></path>
+                            <path
+                              opacity="0.5"
+                              d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z"
+                              fill="currentColor"
+                            ></path>
+                            <path
+                              opacity="0.5"
+                              d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z"
+                              fill="currentColor"
+                            ></path>
+                          </svg>
+                        </span>
+                        <!--end::Svg Icon-->
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+              <!--end::Table body-->
+            </table>
+            <!--end::Table-->
+          </div>
+        </div>
+      </div>
+
+      <!--end::Row-->
+      <!--begin::Row-->
+    </div>
+    <!--end::Card body-->
+    <!--begin::Card footer-->
+    <div class="card-footer d-flex justify-content-end py-6 px-9">
+      <button
+        type="button"
+        class="btn btn-primary"
+        id="kt_project_settings_submit"
+        (click)="save()"
+      >
+        Guardar Cupon
+      </button>
+    </div>
+    <!--end::Card footer-->
+    <input type="hidden" />
+    <div></div>
+  </form>
+  <!--end:Form-->
+</div>

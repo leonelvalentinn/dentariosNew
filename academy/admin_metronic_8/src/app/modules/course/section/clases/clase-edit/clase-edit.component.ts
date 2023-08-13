@@ -1,8 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CourseService } from '../../../service/course.service';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Toaster } from 'ngx-toast-notifications';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ClaseFileDeleteComponent } from '../clase-file-delete/clase-file-delete.component';
 
 @Component({
   selector: 'app-clase-edit',
@@ -21,11 +22,14 @@ export class ClaseEditComponent implements OnInit {
   video_curso: any;
   isUploadVideo: Boolean = false;
   link_video_course: any = null;
+  isUploadFiles: Boolean = false;
+  state: any = 1;
   constructor(
     public courseService: CourseService,
     public modal: NgbActiveModal,
     public toaster: Toaster,
-    public sanitizer: DomSanitizer
+    public sanitizer: DomSanitizer,
+    public modalService: NgbModal
   ) {}
 
   ngOnInit(): void {
@@ -33,12 +37,15 @@ export class ClaseEditComponent implements OnInit {
     this.title = this.clase_selected.name;
     this.description = this.clase_selected.description;
     this.FILES_CLASE = this.clase_selected.files;
+    this.link_video_course = this.clase_selected.vimeo_id;
+    this.state = this.clase_selected.state;
   }
 
   save() {
     let data = {
       name: this.title,
       description: this.description,
+      state: this.state,
     };
     this.courseService
       .updateClase(data, this.clase_selected.id)
@@ -75,6 +82,29 @@ export class ClaseEditComponent implements OnInit {
       this.link_video_course
     );
   }
+  uploadFiles() {
+    if (this.FILES.length == 0) {
+      this.toaster.open({
+        text: 'NECESITAS SUBIR UN RECURSO A LA CLASE',
+        caption: 'VALIDACION',
+        type: 'danger',
+      });
+      return;
+    }
+
+    let formData = new FormData();
+    formData.append('course_clase_id', this.clase_selected.id);
+    this.FILES.forEach((file: any, index: number) => {
+      formData.append('files[' + index + ']', file);
+    });
+    this.isUploadFiles = true;
+    this.courseService.registerClaseFile(formData).subscribe((resp: any) => {
+      this.isUploadFiles = false;
+      console.log(resp);
+      this.modal.close();
+      this.ClaseE.emit(resp.clase);
+    });
+  }
   processVideo($event: any) {
     console.log($event.target.files[0].type);
     if ($event.target.files[0].type.indexOf('video') < 0) {
@@ -96,5 +126,16 @@ export class ClaseEditComponent implements OnInit {
 
     console.log(this.FILES);
   }
-  deleteFile(FILE: any) {}
+  deleteFile(FILE: any) {
+    const modalRef = this.modalService.open(ClaseFileDeleteComponent, {
+      centered: true,
+      size: 'sm',
+    });
+    modalRef.componentInstance.file_selected = FILE;
+
+    modalRef.componentInstance.FileD.subscribe((resp: any) => {
+      let INDEX = this.FILES_CLASE.findIndex((item: any) => item.id == FILE.id);
+      this.FILES_CLASE.splice(INDEX, 1);
+    });
+  }
 }

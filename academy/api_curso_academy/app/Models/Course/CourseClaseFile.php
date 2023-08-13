@@ -34,4 +34,12 @@ class CourseClaseFile extends Model
 
     }
     
+    public function getSizeAttribute($size)
+    {
+        $size = (int) $size;
+        $base = log($size) / log(1024);
+        $suffixes = array(' bytes', ' KB', ' MB', ' GB', ' TB');
+        return round(pow(1024, $base - floor($base)), 2) . $suffixes[floor($base)];
+    }
+
 }

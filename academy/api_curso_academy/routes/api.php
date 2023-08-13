@@ -8,7 +8,7 @@ use App\Http\Controllers\Admin\Course\ClaseGController;
 use App\Http\Controllers\Admin\Course\CourseGController;
 use App\Http\Controllers\Admin\Course\SectionGController;
 use App\Http\Controllers\Admin\Course\CategorieController;
-
+use App\Http\Controllers\Admin\Discount\DiscountController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,8 +57,10 @@ Route::group([
       Route::resource('/course-section',SectionGController::class);
       Route::resource('/course-clases',ClaseGController::class);
       Route::post('/course-clases-file',[ClaseGController::class, "addFiles"]);
-     Route::post('/course-clases-file/{id}',[ClaseGController::class, "removeFiles"]);
+     Route::delete('/course-clases-file/{id}',[ClaseGController::class, "removeFiles"]);
     Route::post('/course-clases/upload_video/{id}',[ClaseGController::class,"upload_video"]);
     
+       
+      Route::resource('/discount',DiscountController::class);
     
 });

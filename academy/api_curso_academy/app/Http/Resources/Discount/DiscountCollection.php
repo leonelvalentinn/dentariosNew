@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Resources\Course\Clases;
+namespace App\Http\Resources\Discount;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
-use App\Http\Resources\Course\Clases\CourseClaseResource;
 
-class CourseClaseCollection extends ResourceCollection
+class DiscountCollection extends ResourceCollection
 {
     /**
      * Transform the resource collection into an array.
@@ -16,7 +15,7 @@ class CourseClaseCollection extends ResourceCollection
     public function toArray($request)
     {
         return [
-               "data"=> CourseClaseResource::collection(($this->collection)),
+           "data" => DiscountResource::collection($this->collection),
         ];
     }
 }

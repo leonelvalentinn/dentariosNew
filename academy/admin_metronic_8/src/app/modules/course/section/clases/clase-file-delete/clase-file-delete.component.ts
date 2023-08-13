@@ -4,14 +4,14 @@ import { Toaster } from 'ngx-toast-notifications';
 import { CourseService } from '../../../service/course.service';
 
 @Component({
-  selector: 'app-clase-delete',
-  templateUrl: './clase-delete.component.html',
-  styleUrls: ['./clase-delete.component.scss'],
+  selector: 'app-clase-file-delete',
+  templateUrl: './clase-file-delete.component.html',
+  styleUrls: ['./clase-file-delete.component.scss'],
 })
-export class ClaseDeleteComponent implements OnInit {
-  @Input() clase_selected: any;
+export class ClaseFileDeleteComponent implements OnInit {
+  @Input() file_selected: any;
 
-  @Output() ClaseD: EventEmitter<any> = new EventEmitter();
+  @Output() FileD: EventEmitter<any> = new EventEmitter();
   isLoading: any;
   constructor(
     public courseService: CourseService,
@@ -25,9 +25,9 @@ export class ClaseDeleteComponent implements OnInit {
 
   delete() {
     this.courseService
-      .deleteClase(this.clase_selected.id)
+      .deleteClaseFile(this.file_selected.id)
       .subscribe((resp: any) => {
-        this.ClaseD.emit('');
+        this.FileD.emit('');
         this.modal.dismiss();
       });
   }

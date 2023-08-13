@@ -49,7 +49,11 @@ function appInitializer(authService: AuthService) {
     //
     CKEditorModule,
     //
-    ToastNotificationsModule.forRoot({duration: 6000, type: 'primary',position: 'top-right'}),
+    ToastNotificationsModule.forRoot({
+      duration: 6000,
+      type: 'primary',
+      position: 'top-right',
+    }),
   ],
   providers: [
     {

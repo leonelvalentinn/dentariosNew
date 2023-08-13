@@ -61,8 +61,8 @@ class ClaseGController extends Controller
         $path = Storage::putFile("clases_files", $file);
 
         $clase_file = CourseClaseFile::create([
-        "course_section_id" => $clase->id,
-        "name" => $name_file,
+        "course_clase_id" => $clase->id,
+        "name_file" => $name_file,
         "size"=> $size, 
         "resolution" => $data ?  $data[0]. " X " .$data[1] : NULL,
         "file" => $path,
@@ -148,8 +148,8 @@ class ClaseGController extends Controller
         }
         $path = Storage::putFile("clase_files", $file);
         $clase_file = CourseClaseFile::create([
-        "course_section_id" => $clase->id,
-        "name" => $name_file,
+        "course_clase_id" => $clase->id,
+        "name_file" => $name_file,
         "size"=> $size, 
         "resolution" => $data ?  $data[0]. " X " .$data[1] : NULL,
         "file" => $path,

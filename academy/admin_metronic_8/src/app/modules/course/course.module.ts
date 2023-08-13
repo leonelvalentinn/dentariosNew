@@ -18,6 +18,7 @@ import { SectionDeleteComponent } from './section/section-delete/section-delete.
 import { ClaseAddComponent } from './section/clases/clase-add/clase-add.component';
 import { ClaseEditComponent } from './section/clases/clase-edit/clase-edit.component';
 import { ClaseDeleteComponent } from './section/clases/clase-delete/clase-delete.component';
+import { ClaseFileDeleteComponent } from './section/clases/clase-file-delete/clase-file-delete.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ClaseDeleteComponent } from './section/clases/clase-delete/clase-delete
     ClaseAddComponent,
     ClaseEditComponent,
     ClaseDeleteComponent,
+    ClaseFileDeleteComponent,
   ],
   imports: [
     CommonModule,

@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Toaster } from 'ngx-toast-notifications';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ClaseEditComponent } from '../clase-edit/clase-edit.component';
+import { ClaseDeleteComponent } from '../clase-delete/clase-delete.component';
 
 @Component({
   selector: 'app-clase-add',
@@ -64,6 +65,15 @@ export class ClaseAddComponent implements OnInit {
     });
     this.courseService.registerClase(formData).subscribe((resp: any) => {
       console.log(resp);
+      this.toaster.open({
+        text: 'LA CLASE SE HA REGISTRADO CORRECTAMENTE',
+        caption: 'VALIDACION',
+        type: 'success',
+      });
+      this.CLASES.push(resp.clase);
+      this.title = null;
+      this.description = null;
+      this.FILES = [];
     });
   }
 
@@ -81,7 +91,18 @@ export class ClaseAddComponent implements OnInit {
       this.CLASES[INDEX] = CLASEE;
     });
   }
-  deleteClases(CLASE: any) {}
+  deleteClases(CLASE: any) {
+    const modalRef = this.modalService.open(ClaseDeleteComponent, {
+      centered: true,
+      size: 'sm',
+    });
+    modalRef.componentInstance.clase_selected = CLASE;
+
+    modalRef.componentInstance.ClaseD.subscribe((resp: any) => {
+      let INDEX = this.CLASES.findIndex((item: any) => item.id == CLASE.id);
+      this.CLASES.splice(INDEX, 1);
+    });
+  }
   processFile($event: any) {
     for (const file of $event.target.files) {
       this.FILES.push(file);
