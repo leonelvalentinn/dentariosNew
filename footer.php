@@ -1,5 +1,5 @@
 <div class="opinions">
-            <div class="title-opinions">
+            <div class="title-opinions" id="contacto">
                 <h2><span>Con</span><span>tacto</span></h2>
                 <div class="blue-line" data-aos="fade-left" data-aos-duration="1000"></div>
             </div>
@@ -44,30 +44,36 @@
                                 <p>Servicio de Interes:</p>
                             </div>
                             <div class="input-from-services">
-                                <div class="input-from-service">
+                                <label class="input-from-service">
                                     <input type="checkbox" />
+                                    <span class="checkmark"></span>
                                     <label for="">Publicidad Digital</label>
-                                </div>
-                                <div class="input-from-service">
+                                </label>
+                                <label class="input-from-service">
                                     <input type="checkbox" />
+                                    <span class="checkmark"></span>
                                     <label for="">Desarrollo Web</label>
-                                </div>
-                                <div class="input-from-service">
+                                </label>
+                                <label class="input-from-service">
                                     <input type="checkbox" />
+                                    <span class="checkmark"></span>
                                     <label for="">Diseño de Marca</label>
-                                </div>
-                                <div class="input-from-service">
+                                </label>
+                                <label class="input-from-service">
                                     <input type="checkbox" />
+                                    <span class="checkmark"></span>
                                     <label for="">Publicidad Pautada</label>
-                                </div>
-                                <div class="input-from-service">
+                                </label>
+                                <label class="input-from-service">
                                     <input type="checkbox" />
-                                    <label for="">Manejo de Redes S.</label>
-                                </div>
-                                <div class="input-from-service">
+                                    <span class="checkmark"></span>
+                                    <label for="">Manejo de Redes</label>
+                                </label>
+                                <label class="input-from-service">
                                     <input type="checkbox" />
+                                    <span class="checkmark"></span>
                                     <label for="">Otro servicio</label>
-                                </div>
+                                </label>
                             </div>
                         </div>
                         <div class="input-container">
@@ -78,34 +84,34 @@
                     </form>
                 </div>
                 <div class="item-contact">
-                    <div class="sub-item-contact">
+                    <a class="sub-item-contact" href="tel525590382078" target="_blank" style="text-decoration: none;">
                         <i class="fa-solid fa-phone"></i>
                         <div class="date-item">
                             <h6>Teléfono</h6>
-                            <p><a href="">5590382078</a></p>
+                            <p>5590382078</p>
                         </div>
-                    </div>
-                    <div class="sub-item-contact">
+                    </a>
+                    <a class="sub-item-contact" href="https://www.instagram.com/dentarios.mx/" target="_blank" style="text-decoration: none;">
                         <i class="fa-brands fa-square-instagram"></i>
                         <div class="date-item">
                             <h6>Instagram</h6>
-                            <p><a href="">dentarios.mx</a></p>
+                            <p>dentarios.mx</p>
                         </div>
-                    </div>
-                    <div class="sub-item-contact">
-                        <i class="fa-solid fa-location-dot"></i>
+                    </a>
+                    <a class="sub-item-contact" href="https://wa.me/525590382078" target="_blank" style="text-decoration: none;">
+                        <i class="fa-brands fa-whatsapp"></i>
                         <div class="date-item">
-                            <h6>Dirección</h6>
-                            <p><a href="">Cdmx, México</a></p>
+                            <h6>WhatsApp</h6>
+                            <p>5590382078</p>
                         </div>
-                    </div>
-                    <div class="sub-item-contact">
+                    </a>
+                    <a class="sub-item-contact" href="mailto:dentariosmx@gmail.com" target="_blank" style="text-decoration: none;">
                         <i class="fa-solid fa-envelope"></i>
                         <div class="date-item">
                             <h6>Email</h6>
-                            <p><a href="">dentariosmx@gmail.com</a></p>
+                            <p>dentariosmx@gmail.com</p>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -118,30 +124,30 @@
             <div class="item-footer">
                 <h2>Contacto</h2>
                 <div class="container-date-contact">
-                    <div class="item-date-contact">
+                    <a class="item-date-contact" href="tel:5590382078" target="_blank" style="text-decoration: none;">
                         <img src="images/smartphone.png" alt="" />
-                        <p><a href="">5590382078</a></p>
-                    </div>
-                    <div class="item-date-contact">
+                        <p>5590382078</p>
+                    </a>
+                    <a class="item-date-contact" href="mailto:dentariosmx@gmail.com" target="_blank" style="text-decoration: none;">
                         <img src="images/email.png" alt="" />
-                        <p><a href="">dentariosmx@gmail.com</a></p>
-                    </div>
+                        <p>dentariosmx@gmail.com</p>
+                    </a>
                 </div>
             </div>
             <div class="item-footer">
                 <div class="menu-footer">
-                    <a href="">Inicio</a>
-                    <a href="">Nosotros</a>
-                    <a href="">Servicios</a>
-                    <a href="">Portafolio</a>
-                    <a href="">Contacto</a>
+                    <a href="index.php">Inicio</a>
+                    <a href="nosotros.php">Nosotros</a>
+                    <a href="servicios.php">Servicios</a>
+                    <a href="index.php/#portafolio">Portafolio</a>
+                    <a href="index.php/#contacto">Contacto</a>
                 </div>
             </div>
             <div class="item-footer">
-                <a href=""><img src="images/facebook.png" alt="" /></a>
-                <a href=""><img src="images/instagram2.png" alt="" /></a>
-                <a href=""><img src="images/tiktok.png" alt="" /></a>
-                <a href=""><img src="images/whatsappx.png" alt="" /></a>
+                <a href="https://wa.me/525590382078" target="_blank"><img src="images/facebook.png" alt="" /></a>
+                <a href="https://www.instagram.com/dentarios.mx/" target="_blank"><img src="images/instagram2.png" alt="" /></a>
+                <a href="" target="_blank"><img src="images/tiktok.png" alt="" /></a>
+                <a href="https://wa.me/525590382078" target="_blank"><img src="images/whatsappx.png" alt="" /></a>
             </div>
         </div>
         <div class="container-date">

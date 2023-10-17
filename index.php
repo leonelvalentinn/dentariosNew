@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
     <title>Dentarios</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
@@ -23,11 +24,11 @@
         <div class="know-us">
             <div class="container-know-us">
                 <div class="item-know-us" data-aos="fade-down" data-aos-duration="1000" id="know-us">
-                    <img src="images/somos.png" alt="" />
+                    <img src="images/somos.jpeg" alt="" />
                 </div>
                 <div class="item-know-us" >
                     <h6 data-aos="fade-down" data-aos-duration="1000">
-                        la agencia de marketing digital dental de méxico
+                        la agencia de marketing digital dental de México
                     </h6>
                     <h2 data-aos="zoom-in" data-aos-duration="1000">
                         <span class="white-letter">Sobre</span>
@@ -36,16 +37,25 @@
                     <p data-aos="zoom-in" data-aos-duration="1000">
                         Somos una agencia de publicidad con mas de 10 años de experiencia
                         en el sector odontológico, compuesta por profesionales expertos en
-                        canales digitales y en constante actualización.Dentarios maneja
-                        actualmente las siguientes áreas: Diseño, Programación, Branding,
-                        SEO, SEM, Marketing digital, marketing de contenidos.Hace 2 años
-                        la agencia inicio una nueva aventura: Dentarios Academy que es la
-                        área académica, la cual nos ha brindado la oportunidad de ayudar a
-                        dirigir proyectos por medio de capacitaciones, cursos y diplomados
-                        en México, Colombia y Panamá.Nuestra experiencia y capacitación
-                        continua nos coloca como la agencia número 1 especializada en el
-                        sector Odontológico.
+                        canales digitales y en constante actualización. Dentarios maneja
+                        actualmente las siguientes áreas: 
                     </p>
+                        <ul data-aos="zoom-in" data-aos-duration="1000">
+                            <li>Diseño</li>
+                            <li>Programación</li>
+                            <li>Branding</li>
+                            <li>SEO</li>
+                            <li>SEM</li>
+                            <li>Marketing digital</li>
+                            <li>Marketing de Contenidos</li>
+                        </ul>
+                        <p data-aos="zoom-in" data-aos-duration="1000">Hace 2 años
+                        la agencia inicio una nueva aventura: Dentarios Academy que es la
+                        área académica, la cual nos ha brindado la oportunidad de
+                        dirigir proyectos por medio de capacitaciones, cursos y diplomados
+                        en México, Colombia y Panamá. Nuestra experiencia y capacitación
+                        continua nos coloca como la agencia número 1 especializada en el
+                        sector Odontológico.</p>                    
                 </div>
             </div>
         </div>
@@ -61,7 +71,7 @@
                 </div>
                 <div class="item-targets">
                     <h2><span>Contác</span><span>tanos</span></h2>
-                    <a href="">Ver más</a>
+                    <a href="#contacto">Ver más</a>
                 </div>
             </div>
         </section>
@@ -75,12 +85,12 @@
             <div class="container-services">
                 <div class="item-services" data-aos="fade-right" data-aos-duration="1000">
                     <div class="item-services-header">
-                        <h2>Contenido Organico</h2>
+                        <h2>Contenido Orgánico</h2>
                         <p>
                             La importancia del contenido orgánico en las redes sociales de
                             las empresas, es crear un vínculo con el target o público meta,
                             ya sea visual o emocional con lo que estos se sientan
-                            identificados.Entre las ventajas del contenido orgánico puede
+                            identificados. Entre las ventajas del contenido orgánico puede
                             resaltarse que el usuario que conecte con el mismo desarrolla
                             conexiones a largo plazo, que permiten la fidelización del
                             mismo.
@@ -92,7 +102,7 @@
                     <div class="item-services-header">
                         <h2>Publicidad Pautada</h2>
                         <p>
-                            Incrementa la visibilidad de tú marca frente a su público
+                            Incrementa la visibilidad de tu marca frente a su público
                             objetivo en los principales medios digitales, como las redes
                             sociales. En los últimos años, los medios digitales se han
                             convertido en los espacios ideales para las marcas. Y es que son
@@ -111,7 +121,7 @@
                             digital es necesario disponer de las herramientas de diseño
                             gráfico. Cabe destacar que es un universo donde la creatividad
                             puede marcar la diferencia entre sobresalir o fracasar. Es allí
-                            donde el diesño marca la diferencia ya que permite utilizar los
+                            donde el diseño marca la diferencia, ya que permite utilizar los
                             recursos para dar al contenido un aspecto profesional y
                             atractivo.
                         </p>
@@ -120,7 +130,7 @@
                 </div>
                 <div class="item-services" data-aos="fade-right" data-aos-duration="1000">
                     <div class="item-services-header">
-                        <h2>Desarrollo Web</h2>
+                        <h2 style="margin: 0 10px;">Desarrollo Web</h2>
                         <p>
                             Construimos experiencias digitales enfocadas en el usuario que
                             garantizan máxima retención y un nivel de funcionalidad nunca
@@ -150,12 +160,12 @@
                     <div class="item-services-header">
                         <h2>Servicios Adicionales</h2>
                         <p>
-                            Cuéntanos tus necesidades , que con gusto te ayudaremos a crear
+                            Cuéntanos tus necesidades, que con gusto te ayudaremos a crear
                             la mejor estrategia uniendo todos los puntos para llegar al
-                            objetivo trazado . Juntos podemos llegar al siguiente nivel y
-                            haremos crecer tu consultorio o clínica dental . Siempre estaras
-                            apoyado por profesionales en el área que haran crecer tu
-                            negocio. ¡Atrévete e incia un plan con nosotros!.
+                            objetivo trazado. Juntos podemos llegar al siguiente nivel y
+                            haremos crecer tu consultorio o clínica dental. Siempre estarás
+                            apoyado por profesionales en el área que harán crecer tu
+                            negocio. ¡Atrévete e inicia un plan con nosotros!.
                         </p>
                     </div>
                     <a href="#">Ver más</a>
@@ -166,11 +176,11 @@
             <h2 data-aos="zoom-in" data-aos-duration="1000">
                 <span>Tenemos lo que</span> <span>Necesitas</span>
             </h2>
-            <a href="" data-aos="zoom-in" data-aos-duration="1000">Contáctanos</a>
+            <a href="#contacto" data-aos="zoom-in" data-aos-duration="1000">Contáctanos</a>
         </div>
         <div class="portfolio">
             <h3 data-aos="zoom-in" data-aos-duration="1000">
-                Nuestro trabajo es nuestra tajeta de presentación
+                Nuestro trabajo es nuestra tarjeta de presentación
             </h3>
             <div class="title-portfolio">
                 <div class="item-title-portfolio">
@@ -182,9 +192,9 @@
                 <div class="item-title-portfolio" data-aos="zoom-in" data-aos-duration="1000">
                     <p>
                         Te mostramos algunos de nuestros trabajos para que conozcas más
-                        que es lo que hacemos y asi permitirnos ser tu mejor opcion.
+                        sobre lo que hacemos, y así, permitirnos ser tu mejor opción.
                         Trabaja con nosotros y creceremos juntos. Siempre es mejor
-                        trabajar en equipo y que mejor equipo que nosotros.
+                        trabajar en equipo, y que mejor equipo que nosotros.
                     </p>
                 </div>
             </div>
@@ -193,10 +203,10 @@
                     <img src="" alt="" id="imgSliderOne" />
                 </div>
                 <div class="item-portfolio item-2" data-aos="fade-down" data-aos-duration="1000">
-                    <img src="images/portfolio-static-one.jpg" alt="" class="img-slider-2" />
+                    <img src="images/Clientes/dentalsonrix.png" alt="" class="img-slider-2" />
                 </div>
                 <div class="item-portfolio item-3" data-aos="fade-up" data-aos-duration="1000">
-                    <img src="images/portfolio-static-one.jpg" alt="" class="img-slider-2" />
+                    <img src="images/Clientes/orthodentic.png" alt="" class="img-slider-2" />
                 </div>
                 <div class="item-portfolio item-4" data-aos="fade-up" data-aos-duration="1000">
                     <img src="" alt="" id="imgSliderTwo" />
@@ -210,7 +220,7 @@
             <div class="blue-line3" data-aos="fade-left" data-aos-duration="1000"></div>
         </div>
         <div class="clients">
-            <h2>Clíentes que han trabajado con nosotros</h2>
+            <h2>Clientes que han trabajado con nosotros</h2>
             <div class="carousel">
                 <div class="carousel-items">
                     <div class="carousel-item">
@@ -303,9 +313,9 @@
             <div class="container-opinions">
                 <div class="item-opinions">
                     <p>
-                        Nosotros creamos vinculos fuertes con nuestros clientes que se
+                        Nosotros creamos vínculos fuertes con nuestros clientes que se
                         transforma en una forma efectiva de trabajo, que a su vez se
-                        traduce en excelentes resultados a corto , mediano y largo plazo.
+                        traduce en excelentes resultados a corto, mediano y largo plazo.
                         Conoce lo que los doctores opinan de nosotros.
                     </p>
                 </div>
@@ -392,7 +402,7 @@
                 </div>
                 <div class="item-opinions">
                     <div class="title-photo">
-                        <h6>Kenedy Mayo Mayo</h6>
+                        <h6>Dra. Ivonne Torres</h6>
                         <div class="stars">
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
@@ -413,7 +423,7 @@
             </div>
         </div>
        <?php 
-         include('footer.php')
+            include('footer.php')
        ?>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>

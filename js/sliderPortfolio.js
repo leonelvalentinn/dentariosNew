@@ -1,12 +1,12 @@
 let imgSliderOne = [
-  "images/slider-cel-1.png",
-  "images/slider-cel-2.png",
-  "images/slider-cel-3.png",
+  "images/Clientes/juarez.png",
+  "images/Clientes/juarez.png",
+  "images/Clientes/juarez.png",
 ];
 let imgSliderTwo = [
-  "images/slider-cel-1.png",
-  "images/slider-cel-2.png",
-  "images/slider-cel-3.png",
+  "images/Clientes/thesmilingsociety.png",
+  "images/Clientes/thesmilingsociety.png",
+  "images/Clientes/thesmilingsociety.png",
 ];
 
 curIndex = 0;

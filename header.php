@@ -9,9 +9,9 @@
                 <nav class="menu">
                     <a href="index.php">Inicio</a>
                     <a href="nosotros.php">Nosotros</a>
-                     <a href="#testimonios">Testimonios</a>
-                    <a href="index.php#servicios">Servicios</a>
-                    <a href="academy.php">Academy</a>
+                    <a href="servicios.php">Servicios</a>
+                    <a href="#testimonios">Testimonios</a>
+                    <a href="https://academy.dentarios.com.mx" target="_blank">Academy</a>
                     <button id="modo">
                         <img src="images/luna.png" alt="" id="moon" />
                         <img src="images/sun.png" alt="" id="sun" />

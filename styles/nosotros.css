@@ -130,6 +130,7 @@
 .team {
   width: 100%;
   text-align: center;
+  margin-top: 60px;
 }
 .team h2 {
   font-size: 2.5em;

@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dentarios</title>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <title>Dentarios | Nosotros</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link
       rel="stylesheet"
@@ -22,7 +23,7 @@
     <div class="container-about">
       <h2> <span class="white">Sobre</span>
         <span class="blue">Nosotros</span></h2>
-        <p>la primera agencia de marketing dental en latam</p>
+        <p>la primera agencia de marketing dental en LATAM</p>
   
     </div>
     
@@ -37,7 +38,7 @@
         data-aos="fade-down"
         data-aos-duration="1000"
       >
-        <img src="images/somos.png" alt="" />
+        <img src="images/curso.png" alt="" />
       </div>
       <div class="item-know-us">
         
@@ -49,7 +50,7 @@
            Somos una agencia de publicidad con mas de 10 años de experiencia
               en el sector odontológico, compuesta por profesionales expertos en
               canales digitales y en constante actualización.
-              Por esa razon tenemos la certeza de los resultados que podemos dar.
+              Por esa razón tenemos la certeza de los resultados que podemos dar.
               Muchas clínicas y consultorios han confiado en nosotros.
         </p>
       </div>
@@ -79,8 +80,9 @@
       </p>
        
       </div>
-      <div class="item-know-us">
-        <img src="images/somos.png" alt="" />
+      <div class="item-know-us" data-aos="fade-down"
+        data-aos-duration="1000">
+        <img src="images/curso-2.png" alt="" />
         
       </div>
     </div>
@@ -91,7 +93,7 @@
       <span class="blue-letter">Rumbo</span>
     </h2>
     
-    <p>a donde nos dirigimos</p>
+    <p>¿a dónde nos dirigimos?</p>
     <div class="container-values">
       <div class="item-values">
         <div class="sub-item-value">
@@ -101,12 +103,17 @@
           <h2>Misión</h2>
         </div>
         <div class="sub-item-value pr">
-          <p>Formación y desarrollo de los profesionales en el área digital, clínico y técnico con los mas altos estándares de calidad, incorporando las mas recientes actualizaciones para tener un mayor impacto en la práctica profesional logrando así empresas y negocios competitivos.</p>
+          <p>Formación y desarrollo de los profesionales en el área digital, clínico y técnico con los 
+            más altos estándares de calidad, incorporando las más recientes actualizaciones para tener un 
+            mayor impacto en la práctica profesional logrando así empresas y negocios competitivos.</p>
         </div>
       </div>
       <div class="item-values">
         <div class="sub-item-value pr">
-          <p>Buscamos ser una empresa de formación y actualización de profesionales por medio de cursos que impacten de forma directa en el crecimiento de las empresas, actualmente las nuevas tecnología cambian constantemente y sabemos que es importante que las empresas esten actualizadas ya que eso les ayuda a ser más competitivas.</p>
+          <p>Buscamos ser una empresa de formación y actualización de profesionales por medio de 
+            cursos que impacten de forma directa en el crecimiento de las empresas. Actualmente las nuevas 
+            tecnologías cambian constantemente y sabemos que es importante que las empresas estén actualizadas 
+            ya que eso les ayuda a ser más competitivas.</p>
         </div>
         <div class="sub-item-value pr-title">
           <h2>Visión</h2>
@@ -124,11 +131,15 @@
         </div>
         <div class="sub-item-value pr">
           
-            <p>* Incorporación de estrategias digitales a las empresas a través de la formación y aumentamos la competitividad de las organizaciones.
+            <p>* Incorporación de estrategias digitales a las empresas a través de la formación y aumentamos 
+              la competitividad de las organizaciones.
               <br>
-              * Crecimiento de las empresas por medio de técnicas innovadoras la empresa logra tener un crecimiento en captación de nuevos pacientes.
+              * Crecimiento de las empresas por medio de técnicas innovadoras la empresa logra tener un 
+              crecimiento en captación de nuevos pacientes.
               <br>
-              * De la mano de profesionales calificados el poder estar dirigidos por profesionales con alta experiencia con el sector de la salud ayuda a incorporar estrategias mas solidas y confiables a la empresa.
+              * De la mano de profesionales calificados el poder estar dirigidos por profesionales con alta 
+              experiencia con el sector de la salud ayuda a incorporar estrategias mas solidas y confiables 
+              a la empresa.
             </p>
 
           
@@ -141,7 +152,7 @@
       <span class="white-letter">Nuestro</span>
       <span class="blue-letter">Equipo</span>
     </h2>
-    <p>Conocé a todos los integrantes de este equipo</p>
+    <p>Conoce a todos los integrantes de este equipo</p>
           <div class="container-team">
         <div class="item-team">
           <img src="images/team-1.jpg" alt="">
@@ -207,9 +218,9 @@
             <div class="container-opinions">
                 <div class="item-opinions">
                     <p>
-                        Nosotros creamos vinculos fuertes con nuestros clientes que se
+                        Nosotros creamos vínculos fuertes con nuestros clientes que se
                         transforma en una forma efectiva de trabajo, que a su vez se
-                        traduce en excelentes resultados a corto , mediano y largo plazo.
+                        traduce en excelentes resultados a corto, mediano y largo plazo.
                         Conoce lo que los doctores opinan de nosotros.
                     </p>
                 </div>
@@ -296,7 +307,7 @@
                 </div>
                 <div class="item-opinions">
                     <div class="title-photo">
-                        <h6>Kenedy Mayo Mayo</h6>
+                        <h6>Dra. Ivonne Torres</h6>
                         <div class="stars">
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
