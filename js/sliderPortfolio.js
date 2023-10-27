@@ -1,7 +1,7 @@
 let imgSliderOne = [
-  "images/Clientes/juarez.png",
-  "images/Clientes/juarez.png",
-  "images/Clientes/juarez.png",
+  "images/Clientes/dentalsonrix.png",
+  "images/Clientes/dentalsonrix.png",
+  "images/Clientes/dentalsonrix.png",
 ];
 let imgSliderTwo = [
   "images/Clientes/thesmilingsociety.png",

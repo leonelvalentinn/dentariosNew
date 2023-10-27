@@ -96,7 +96,7 @@
                             mismo.
                         </p>
                     </div>
-                    <a href="#">Ver más</a>
+                    <a href="servicios.php#parte1">Ver más</a>
                 </div>
                 <div class="item-services" data-aos="fade-down" data-aos-duration="1000">
                     <div class="item-services-header">
@@ -111,7 +111,7 @@
                             contratan este servicio.
                         </p>
                     </div>
-                    <a href="#">Ver más</a>
+                    <a href="servicios.php#parte2">Ver más</a>
                 </div>
                 <div class="item-services" data-aos="fade-left" data-aos-duration="1000">
                     <div class="item-services-header">
@@ -126,7 +126,7 @@
                             atractivo.
                         </p>
                     </div>
-                    <a href="#">Ver más</a>
+                    <a href="servicios.php#parte3">Ver más</a>
                 </div>
                 <div class="item-services" data-aos="fade-right" data-aos-duration="1000">
                     <div class="item-services-header">
@@ -140,7 +140,7 @@
                             experiencia para el usuario.
                         </p>
                     </div>
-                    <a href="#">Ver más</a>
+                    <a href="servicios.php#parte4">Ver más</a>
                 </div>
                 <div class="item-services" data-aos="fade-up" data-aos-duration="1000">
                     <div class="item-services-header">
@@ -154,7 +154,7 @@
                             negocio comience a conectar con tu mercado.
                         </p>
                     </div>
-                    <a href="#">Ver más</a>
+                    <a href="servicios.php#parte5">Ver más</a>
                 </div>
                 <div class="item-services" data-aos="fade-left" data-aos-duration="1000">
                     <div class="item-services-header">
@@ -168,7 +168,7 @@
                             negocio. ¡Atrévete e inicia un plan con nosotros!.
                         </p>
                     </div>
-                    <a href="#">Ver más</a>
+                    <a href="servicios.php#parte6">Ver más</a>
                 </div>
             </div>
         </section>
@@ -203,7 +203,7 @@
                     <img src="" alt="" id="imgSliderOne" />
                 </div>
                 <div class="item-portfolio item-2" data-aos="fade-down" data-aos-duration="1000">
-                    <img src="images/Clientes/dentalsonrix.png" alt="" class="img-slider-2" />
+                    <img src="images/Clientes/juarez.png" alt="" class="img-slider-2" />
                 </div>
                 <div class="item-portfolio item-3" data-aos="fade-up" data-aos-duration="1000">
                     <img src="images/Clientes/orthodentic.png" alt="" class="img-slider-2" />

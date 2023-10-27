@@ -58,7 +58,7 @@ header {
 }
 header hr {
   width: 100%;
-  height: 25px;
+  height: 15px;
   background-color: #0081bf;
   border: none;
 }
@@ -225,6 +225,7 @@ header .logo-header img {
 /*Nosostros*/
 .know-us {
   width: 100%;
+  padding-top: 30px;
 }
 .container-know-us {
   width: 90%;
@@ -399,6 +400,7 @@ transform: rotate(45deg);
 /*Servicios*/
 .services {
   width: 100%;
+  padding-top: 30px;
 }
 .services .services-title {
   text-align: center;
@@ -523,6 +525,7 @@ transform: rotate(45deg);
 .need-title {
   width: 100%;
   text-align: center;
+  padding-top: 30px;
 }
 .need-title h2 {
   font-size: 2.5em;
@@ -1090,7 +1093,7 @@ footer {
 .container-date-contact {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 7px;
 }
 .item-date-contact {
@@ -1265,7 +1268,7 @@ footer {
     max-width: 100%;
     height: 100%;
 
-    bottom: -10px;
+    bottom: 0px;
     object-fit: cover;
     z-index: 5;
   }
@@ -1358,10 +1361,11 @@ footer {
     font-size: 1.7em;
   }
   .container-services {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(350px, 350px));
   }
   .item-services .item-services-header {
     padding: 20px 15px;
+    min-height: 300px;
   }
   .item-services-header h2 {
     font-size: 2.1em;
@@ -1774,7 +1778,7 @@ footer {
   .container-date-contact {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 10px;
   }
   .item-date-contact {

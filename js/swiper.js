@@ -1,21 +1,17 @@
-const swiper = new Swiper('.swiper', {
-  // Optional parameters
-  direction: 'vertical',
-  loop: true,
-
-  // If we need pagination
+import Swiper from 'swiper/swiper-bundle.mjs';
+import 'swiper/swiper-bundle.css';
+var swiper = new Swiper('.swiper', {
+  spaceBetween: 30,
+  centeredSlides: true,
+  autoplay: {
+    delay: 2500,
+  },
   pagination: {
     el: '.swiper-pagination',
+    clickable: true,
   },
-
-  // Navigation arrows
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
-  },
-
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
   },
 });

@@ -41,31 +41,41 @@
   border: 2px solid var(--color-title-secundary);
   border-radius: 10px;
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .item-services-header h2 {
   font-size: 1.7em;
   color: #fff;
+  margin: 20px 0;
 }
 .item-services-header h3 {
   font-size: 1em;
   color: var(--color-fuente);
 }
-.item-services-organico:nth-child(1) .item-services-header h2 {
+.item-services-header p {
+  margin-bottom: 20px;
+}
+.item-services-header h1 {
+  color: var(--color-fuente);
+}
+.parte1 .item-services-header h2 {
   color: #0081bf;
 }
-.item-services-organico:nth-child(2) .item-services-header h2 {
+.parte2 .item-services-header h2 {
   color: #ffcc33;
 }
-.item-services-organico:nth-child(3) .item-services-header h2 {
+.parte3 .item-services-header h2 {
   color: #33cccc;
 }
-.item-services-organico:nth-child(4) .item-services-header h2 {
+.parte4 .item-services-header h2 {
   color: #6633cc;
 }
-.item-services-organico:nth-child(5) .item-services-header h2 {
+.parte5 .item-services-header h2 {
   color: #cc3399;
 }
-.item-services:nth-child(6) .item-services-header h2 {
+.parte6 .item-services-header h2 {
   color: gray;
 }
 
@@ -112,13 +122,15 @@
   border: none;
 }
 .swiper {
-  width: 300px;
-  height: 300px;
-}
-.swiper-slide img {
   width: 100%;
-  height: auto;
+  height: 200px;
 }
+.item-know-us img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 @media (min-width: 768px) {
   .hero-nosotros {
     width: 100%;
