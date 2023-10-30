@@ -50,6 +50,9 @@ ul {
   text-align: justify;
   margin-left: 50px;
 }
+.ul-ser {
+  margin: 15px 0 15px 50px;
+}
 header {
   position: relative;
   width: 100%;
@@ -179,7 +182,7 @@ header .logo-header img {
   max-width: 100%;
   height: 500px;
 
-  bottom: -5px;
+  bottom: 0px;
   object-fit: cover;
   z-index: 5;
 }
@@ -249,6 +252,7 @@ header .logo-header img {
 .item-know-us h2 {
   font-size: 2.2em;
   text-transform: uppercase;
+  margin: 20px 0;
 }
 .white-letter {
   color: var(--color-title);
@@ -439,6 +443,7 @@ transform: rotate(45deg);
   font-size: 1.5em;
   color: var(--color-title-secundary);
   text-align: center;
+  margin: 0 50px;
 }
 .container-services {
   width: 90%;
@@ -595,6 +600,7 @@ transform: rotate(45deg);
   margin: auto;
   text-align: center;
   gap: 1em;
+  margin-top: 40px;
 }
 .item-title-portfolio h2 {
   font-size: 2.5em;
@@ -678,6 +684,7 @@ transform: rotate(45deg);
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 60px;
 }
 .dentarios-logo h1 {
   font-size: 3em;
@@ -758,14 +765,15 @@ transform: rotate(45deg);
   height: inherit;
 }
 .carousel-item a img {
-  width: 200px;
-  height: 100px;
+  width: 100px;
+  height: 50px;
   object-fit: contain;
 }
 /*clientes*/
 /*Opinions*/
 .opinions {
   width: 100%;
+  margin-top: 60px;
 }
 .title-opinions {
   width: 100%;
@@ -918,6 +926,7 @@ form .input-container:nth-child(5) {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin-top: 20px;
 }
 form .input-container:nth-child(5) legend {
   width: 100%;
@@ -926,6 +935,9 @@ form .input-container:nth-child(6),
 form .input-container:nth-child(7) {
   width: 100%;
   position: relative;
+}
+form .input-container:nth-child(6) {
+  margin-top: 20px;
 }
 .input-contacto {
   display: flex;
@@ -1095,6 +1107,9 @@ footer {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 7px;
+}
+.container-date-contact p {
+  color: white;
 }
 .item-date-contact {
   display: flex;

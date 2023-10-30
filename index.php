@@ -40,7 +40,7 @@
                         canales digitales y en constante actualización. Dentarios maneja
                         actualmente las siguientes áreas: 
                     </p>
-                        <ul data-aos="zoom-in" data-aos-duration="1000">
+                        <ul  class="ul-ser" data-aos="zoom-in" data-aos-duration="1000">
                             <li>Diseño</li>
                             <li>Programación</li>
                             <li>Branding</li>
@@ -63,11 +63,11 @@
             <div class="container-targets" data-aos="fade-down" data-aos-duration="1000">
                 <div class="item-targets">
                     <h2><span>Servi</span><span>cios</span></h2>
-                    <a href="">Ver más</a>
+                    <a href="servicios.php">Ver más</a>
                 </div>
                 <div class="item-targets">
                     <h2><span>Porta</span><span>folio</span></h2>
-                    <a href="">Ver más</a>
+                    <a href="#portafolio">Ver más</a>
                 </div>
                 <div class="item-targets">
                     <h2><span>Contác</span><span>tanos</span></h2>
@@ -182,7 +182,7 @@
             <h3 data-aos="zoom-in" data-aos-duration="1000">
                 Nuestro trabajo es nuestra tarjeta de presentación
             </h3>
-            <div class="title-portfolio">
+            <div class="title-portfolio" id="portafolio">
                 <div class="item-title-portfolio">
                     <h2 data-aos="zoom-in" data-aos-duration="1000">
                         <span>Portafolio de </span> <span>Trabajos</span>

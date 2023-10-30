@@ -185,15 +185,15 @@
     >
       <div class="item-targets">
         <h2><span>Servi</span><span>cios</span></h2>
-        <a href="">Ver más</a>
+        <a href="servicios.php">Ver más</a>
       </div>
       <div class="item-targets">
         <h2><span>Porta</span><span>folio</span></h2>
-        <a href="">Ver más</a>
+        <a href="index.php#portafolio">Ver más</a>
       </div>
       <div class="item-targets">
         <h2><span>Contác</span><span>tanos</span></h2>
-        <a href="">Ver más</a>
+        <a href="#contacto">Ver más</a>
       </div>
     </div>
   </section>
