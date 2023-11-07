@@ -452,6 +452,7 @@ transform: rotate(45deg);
   gap: 20px;
   margin: 20px auto;
   text-align: center;
+  justify-content: center;
 }
 .item-services .item-services-header {
   width: 100%;
@@ -971,7 +972,6 @@ form .input-container input {
 form .input-container textarea {
   width: 100% !important;
 }
-
 .form_input {
   border: none;
   background: none;
@@ -1019,6 +1019,12 @@ form button {
   color: #fff;
   font-size: 1.1em;
   border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+form button:hover {
+  transition: all 0.3s linear;
+  background-color: #7500c3;
 }
 .item-contact:nth-child(2) {
   display: grid;

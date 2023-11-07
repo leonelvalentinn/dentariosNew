@@ -5,24 +5,24 @@
             </div>
             <div class="container-contact">
                 <div class="item-contact">
-                    <form action="">
+                    <form action="correo.php" method="post">
                         <div class="input-container">
-                            <input type="text" class="form_input" placeholder=" " />
+                            <input type="text" class="form_input" name="Name" placeholder=" " required/>
                             <label class="form_label">Nombre</label>
                             <span class="form_line"></span>
                         </div>
                         <div class="input-container">
-                            <input type="text" class="form_input" placeholder=" " />
-                            <label class="form_label">Clínica o Consultario</label>
+                            <input type="text" class="form_input" name="Clinica" placeholder=" " required/>
+                            <label class="form_label">Clínica o Consultorio</label>
                             <span class="form_line"></span>
                         </div>
                         <div class="input-container">
-                            <input type="email" class="form_input" placeholder=" "/>
+                            <input type="email" class="form_input" name="Email" placeholder=" " required/>
                             <label class="form_label">Email </label>
                             <span class="form_line"></span>
                         </div>
                         <div class="input-container">
-                            <input type="tel" class="form_input" placeholder=" " />
+                            <input type="tel" class="form_input" name="Phone" placeholder=" " required/>
                             <label class="form_label">Teléfono</label>
                             <span class="form_line"></span>
                         </div>
@@ -30,12 +30,12 @@
                             <legend>Preferencia de contacto:</legend>
 
                             <div class="input-contacto">
-                                <input type="radio" id="scales" name="contacto" checked value="llamada" />
+                                <input type="radio" id="scales" name="contacto" checked value="Llamada" />
                                 <label>Llamada</label>
                             </div>
 
                             <div class="input-contacto">
-                                <input type="radio" id="horns" name="contacto" value="" />
+                                <input type="radio" id="horns" name="contacto" value="WhatsApp" />
                                 <label>Whatsapp</label>
                             </div>
                         </div>
@@ -45,39 +45,39 @@
                             </div>
                             <div class="input-from-services">
                                 <label class="input-from-service">
-                                    <input type="checkbox" />
+                                    <input type="checkbox" name="servicio-1" value="Publicidad Digital"/>
                                     <span class="checkmark"></span>
                                     <label for="">Publicidad Digital</label>
                                 </label>
                                 <label class="input-from-service">
-                                    <input type="checkbox" />
+                                    <input type="checkbox" name="servicio-2" value="Desarrollo Web"/>
                                     <span class="checkmark"></span>
                                     <label for="">Desarrollo Web</label>
                                 </label>
                                 <label class="input-from-service">
-                                    <input type="checkbox" />
+                                    <input type="checkbox" name="servicio-3" value="Diseño de Marca"/>
                                     <span class="checkmark"></span>
                                     <label for="">Diseño de Marca</label>
                                 </label>
                                 <label class="input-from-service">
-                                    <input type="checkbox" />
+                                    <input type="checkbox" name="servicio-4" value="Publicidad Pautada"/>
                                     <span class="checkmark"></span>
                                     <label for="">Publicidad Pautada</label>
                                 </label>
                                 <label class="input-from-service">
-                                    <input type="checkbox" />
+                                    <input type="checkbox" name="servicio-5" value="Manejo de Redes"/>
                                     <span class="checkmark"></span>
                                     <label for="">Manejo de Redes</label>
                                 </label>
                                 <label class="input-from-service">
-                                    <input type="checkbox" />
+                                    <input type="checkbox" name="servicio-6" value="Otro servicio"/>
                                     <span class="checkmark"></span>
                                     <label for="">Otro servicio</label>
                                 </label>
                             </div>
                         </div>
                         <div class="input-container">
-                            <textarea name="" id="" cols="30" rows="10" placeholder="¿Describenos que servicio quieres?"
+                            <textarea name="Mensaje" id="" cols="30" rows="10" placeholder="¿Descríbenos que servicio quieres?"
                                 class="form_text_area"></textarea>
                         </div>
                         <button type="submit">Enviar</button>
