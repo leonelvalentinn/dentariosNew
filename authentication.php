@@ -54,7 +54,7 @@ if ($stmt->num_rows > 0) {
         $_SESSION['loggedin'] = TRUE;
         $_SESSION['name'] = $_POST['username'];
         $_SESSION['id'] = $id;
-        header('Location: nosotros.php');
+        header('Location: perfil.php');
     }
 } else {
 
