@@ -1,3 +1,16 @@
+<?php
+error_reporting(E_ERROR | E_WARNING | E_PARSE);  
+
+// confirmar sesion
+
+session_start();
+
+
+if (isset($_SESSION['loggedin'])) {
+  header('Location: perfil.php');
+}
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,6 +28,18 @@
   ?>
     <div class="container-login">
       <div class="login">
+        <div class="error" id="error">
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>
+            <p>Usuario o contraseña incorrecta</p>
+          </div>
+        </div>
+        <div class="exito" id="exito">
+          <div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+            <p>Usuario registrado</p>
+          </div>
+        </div>
           <h1>Inicia sesión</h1>
       
           <form action="authentication.php" method="post">
@@ -45,5 +70,25 @@
     <script src="js/darkMode.js"></script>
     <script src="js/main.js"></script>
     <script src="js/menu.js"></script>
+    <script>
+      const noti = document.getElementById("error");
+      const notiE = document.getElementById("exito");
+      <?php 
+        if (isset( $_GET["error"])) {
+          if ($_GET["error"] == 1) {
+            ?>
+            noti.style.display = 'flex'
+            <?php
+          }
+        }
+        if (isset( $_GET["exito"])) {
+          if ($_GET["exito"] == 1) {
+            ?>
+            notiE.style.display = 'flex'
+            <?php
+          }
+        }
+      ?>
+    </script>
 </body>
 </html>
