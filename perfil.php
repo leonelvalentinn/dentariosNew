@@ -2,10 +2,9 @@
 
 session_start();
 
-
 if (!isset($_SESSION['loggedin'])) {
 
-    header('Location: index.html');
+    header('Location: index.php');
     exit;
 }
 
@@ -46,27 +45,25 @@ $stmt->close();
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil Usuario</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/home.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body class="loggedin">
-    <nav class="navtop">
-        <h1 style="color:white;">Sistema de Login Básico ConfiguroWeb</h1>
-        <a href="inicio.php" style="color:white;">Inicio</a>
-        <a href="perfil.php" style="color:white;"><i class="fas fa-user-circle"></i>Información de Usuario</a>
-        <a href="cerrar-sesion.php" style="color:white;"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>
-    </nav>
+<body id="body">
+  <?php
+    include('header.php');
+  ?>
     <div class="content">
 
-        <h2>Información del Usuario</h2>
+        <h2 style="color: white;">Información del Usuario</h2>
         <div>
             <p>
                 La siguiente es la información registrada de tu cuenta
@@ -92,7 +89,9 @@ $stmt->close();
 
 
     </nav>
-
+    <script src="js/darkMode.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/menu.js"></script>
 </body>
 
 </html>

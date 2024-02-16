@@ -31,11 +31,12 @@ if (!isset($_POST['username'], $_POST['password'])) {
 
 // evitar inyección sql
 
-if ($stmt = $conn->prepare('SELECT id,password FROM clients WHERE username = ?')) {
+if ($stmt = $conn->prepare('SELECT id, password FROM clients WHERE username = ? AND password = ?')) {
 
     // parámetros de enlace de la cadena s
-
-    $stmt->bind_param('s', $_POST['username']);
+    mysqli_stmt_bind_param($stmt, 'ss', $user, $pass);
+    $user = $_POST['username'];
+    $pass = $_POST['password'];
     $stmt->execute();
 }
 
@@ -59,7 +60,7 @@ if ($stmt->num_rows > 0) {
 } else {
 
     // usuario incorrecto
-    header('Location: index.php');
+    header('Location: login.php');
 }
 
 $stmt->close();
