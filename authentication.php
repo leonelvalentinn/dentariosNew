@@ -58,9 +58,8 @@ if ($stmt->num_rows > 0) {
         header('Location: perfil.php');
     }
 } else {
-
     // usuario incorrecto
-    header('Location: login.php');
+    header('Location: login.php?error=1');
 }
 
 $stmt->close();
