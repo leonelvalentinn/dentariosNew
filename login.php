@@ -38,6 +38,7 @@
                 </label>
               </div>
               <input type="submit" value="Acceder">
+              <a class="register" href="register.php">Regístrate</a>
           </form>
       </div>
     </div>
