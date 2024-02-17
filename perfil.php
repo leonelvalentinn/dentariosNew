@@ -65,7 +65,7 @@ $stmt->close();
 
         <h2 style="color: white;">Información del Usuario</h2>
         <div>
-            <p>
+            <p style="color: black;">
                 La siguiente es la información registrada de tu cuenta
             </p>
             <table>
