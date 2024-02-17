@@ -31,7 +31,7 @@ if (isset($_SESSION['loggedin'])) {
         <div class="error" id="error">
           <div>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>
-            <p>Usuario o contraseña incorrecta</p>
+            <p>Credenciales incorrectas</p>
           </div>
         </div>
         <div class="exito" id="exito">
@@ -71,20 +71,20 @@ if (isset($_SESSION['loggedin'])) {
     <script src="js/main.js"></script>
     <script src="js/menu.js"></script>
     <script>
-      const noti = document.getElementById("error");
-      const notiE = document.getElementById("exito");
+      const notification = document.getElementById("error");
+      const notificationSuccess = document.getElementById("exito");
       <?php 
         if (isset( $_GET["error"])) {
           if ($_GET["error"] == 1) {
             ?>
-            noti.style.display = 'flex'
+            notification.style.display = 'flex'
             <?php
           }
         }
         if (isset( $_GET["exito"])) {
           if ($_GET["exito"] == 1) {
             ?>
-            notiE.style.display = 'flex'
+            notificationSuccess.style.display = 'flex'
             <?php
           }
         }
