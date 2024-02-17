@@ -36,15 +36,22 @@ $user = $_POST['username'];
 $pass = $_POST['password'];
 $mail = $_POST['email'];
 
-if ($stmt = $conn->prepare('INSERT INTO clients (name, username, password, email) VALUES ("'.$name.'", "'.$user.'", "'.$pass.'", "'.$mail.'")')) {
-
-  
-  // Execute the query using the data we just defined
-  // The execute() method returns TRUE if it is successful and FALSE if it is not, allowing you to write your own messages here
-  if ($stmt->execute()) {
-    header('Location: login.php?exito=1');
-  } else {
-    echo "Unable to create record";
+//check if username already exits
+$existSql = "SELECT * FROM clients WHERE username = '$user'";
+$result =  mysqli_query($conn, $existSql);
+$numExistRows = mysqli_num_rows($result);
+if ($numExistRows > 0) {
+  header('Location: register.php?error=1');
+} else {
+  if ($stmt = $conn->prepare('INSERT INTO clients (name, username, password, email) VALUES ("'.$name.'", "'.$user.'", "'.$pass.'", "'.$mail.'")')) {
+    // Execute the query using the data we just defined
+    // The execute() method returns TRUE if it is successful and FALSE if it is not, allowing you to write your own messages here
+    if ($stmt->execute()) {
+      header('Location: login.php?exito=1');
+    } else {
+      header('Location: register.php?error=1');
+    }
   }
 }
+
 $stmt->close();
