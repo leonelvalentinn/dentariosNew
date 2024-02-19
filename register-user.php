@@ -33,6 +33,7 @@ if (!isset($_POST['username'], $_POST['password'], $_POST['name'], $_POST['email
 // parámetros de enlace de la cadena s
 $name = $_POST['name'];
 $user = $_POST['username'];
+$clinic = $_POST['clinic'];
 $pass = $_POST['password'];
 $mail = $_POST['email'];
 
@@ -43,7 +44,7 @@ $numExistRows = mysqli_num_rows($result);
 if ($numExistRows > 0) {
   header('Location: register.php?error=1');
 } else {
-  if ($stmt = $conn->prepare('INSERT INTO clients (name, username, password, email) VALUES ("'.$name.'", "'.$user.'", "'.$pass.'", "'.$mail.'")')) {
+  if ($stmt = $conn->prepare('INSERT INTO clients (name, clinic, username, password, email) VALUES ("'.$name.'", "'.$clinic.'", "'.$user.'", "'.$pass.'", "'.$mail.'")')) {
     // Execute the query using the data we just defined
     // The execute() method returns TRUE if it is successful and FALSE if it is not, allowing you to write your own messages here
     if ($stmt->execute()) {

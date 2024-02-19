@@ -45,11 +45,19 @@ if (isset($_SESSION['loggedin'])) {
                 placeholder="Nombre" id="name" required>
               </div>
               <div class="container-label">
+                <label for="clinic">
+                  <i class="fa-solid fa-tooth"></i>
+                </label>
+                <input type="text" name="clinic"
+                placeholder="Clínica" id="clinic" required>
+              </div>
+              <div class="container-label" style="position: relative;">
                 <label for="username">
                     <i class="fas fa-user"></i>
                 </label>
                 <input type="text" name="username"
-                placeholder="Usuario" id="username" required>
+                placeholder="Usuario" id="username" required onchange="validateUserName(event, 'text')">
+                <div class="invalid-feedback" id="feedback"></div>
               </div>
               <div class="container-label">
                 <label for="email">

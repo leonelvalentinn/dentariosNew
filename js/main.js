@@ -38,3 +38,24 @@ function showPassword() {
     pass.type = "password";
   }
 }
+
+function validateUserName(event, type) {
+  const feedback = document.getElementById('feedback')
+  console.log("event", event.target.value)
+  if (type == "text") {
+    let expRegular = /^[A-Za-z0-9]+$/g;
+    if (!expRegular.test(event.target.value)) {
+      feedback.innerHTML = 'No introduzcas caracteres especiales ni espacios en blanco'
+      feedback.classList.add('show-feedback')
+      event.target.value = ""
+      return;
+    } else if (event.target.value.length > '10') {
+      feedback.innerHTML = 'Máximo 10 caracteres'
+      feedback.classList.add('show-feedback')
+      event.target.value = ""
+      return;
+    } else {
+      feedback.classList.remove('show-feedback')
+    }
+  }
+}
