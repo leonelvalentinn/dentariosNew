@@ -121,7 +121,7 @@ if ($plan == 0) {
           echo '<div class="plan">
                   <div class="inner">
                     <span class="pricing">';
-                echo '<span>'.$item['price'].'<small>/ m</small>
+                echo '<span>$'.$item['price'].'<small>/ m</small>
                 </span>
                 </span>';
           echo '<p class="title">'.$item['name'].'</p>';
@@ -143,8 +143,8 @@ if ($plan == 0) {
           }
           echo '</ul>
                 <div class="action">
-                  <a class="button" href="#">
-                    Choose plan
+                  <a class="button" href="checkout.html?id='.$item['id'].'">
+                    Elegir Plan
                   </a>
                   </div>
                 </div>
@@ -152,6 +152,7 @@ if ($plan == 0) {
           }
       ?>
       </div>
+
     </section>
   </div>
   <script src="js/darkMode.js"></script>
